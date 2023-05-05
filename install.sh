@@ -2,6 +2,7 @@
 
 # Print disks, ask for disk to install on
 ls /dev/disk/by-id
+ls /dev/disk/by-path
 echo
 echo "Enter the name of the disk to install NixOS on:"
 read -r DISK
@@ -10,7 +11,7 @@ echo
 # Create partitions
 parted "$DISK" -- mklabel gpt
 parted "$DISK" -- mkpart primary 512MB 100%
-parted "$DISK" -- mkpart ESP fat32 1MiB 512MiB
+parted "$DISK" -- mkpart ESP fat32 1MB 512MB
 parted "$DISK" -- set 2 esp on
 
 # Format partitions
