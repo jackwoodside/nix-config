@@ -36,15 +36,15 @@ parted "$DISK" -- mkpart ESP fat32 1MB 512MB
 parted "$DISK" -- set 2 esp on
 
 # Format partitions
-mkfs.ext4 -L nixos "$DISK"-part1
+mkfs.ext4 -F -F -L nixos "$DISK"-part1
 mkfs.fat -F 32 -n boot "$DISK"-part2
 
 # Mount filesystems
 mount -t tmpfs none /mnt
 
-mkdir -p /mnt/boot
-mount "$DISK"-part1 /mnt/nix
 mkdir -p /mnt/nix
+mount "$DISK"-part1 /mnt/nix
+mkdir -p /mnt/boot
 mount "$DISK"-part2 /mnt/boot
 
 mkdir -p /mnt/nix/persist/etc/nixos
