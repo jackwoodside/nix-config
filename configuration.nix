@@ -94,4 +94,5 @@
     users.root.initialHashedPassword = "ROOTPASS";
   };
 
+  system.stateVersion = "22.11";
 }
