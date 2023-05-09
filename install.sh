@@ -18,6 +18,17 @@ read -r TIMEZONE
 echo "Nvidia? y/(n)"
 read -r NVIDIA
 
+# Wipe disk
+echo "$DISK"
+echo "THE DISK ABOVE WILL BE WIPED"
+echo "Are you sure this is the correct disk? y/(n)"
+read -r WIPE
+if [ "$WIPE" = "y" ]; then
+    wipefs -a -f "$DISK"
+else
+    exit
+fi
+
 # Create partitions
 parted "$DISK" -- mklabel gpt
 parted "$DISK" -- mkpart primary 512MB 100%
