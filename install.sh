@@ -48,16 +48,22 @@ mount -o bind /mnt/nix/persist/var/log /mnt/var/log
 nixos-generate-config --root /mnt
 
 # Fix tmpfs options
-sed -i /tmpfs/a'\      options = [ "defaults" "size=2G" "mode=755" ];' /mnt/etc/nixos/hardware-configuration.nix
+sed -i /'tmpfs'/a'\      options = [ "defaults" "size=2G" "mode=755" ];' /mnt/etc/nixos/hardware-configuration.nix
 
 # Configure user options
 if [ "$NVIDIA" = "y" ]; then
-    sed -i /# Graphics/a'\  services.xserver.videoDriver = [ "nvidia" ];' ./configuration.nix
+    sed -i /'# Graphics'/a'\  services.xserver.videoDriver = [ "nvidia" ];' ./configuration.nix
 fi
-sed -i s/USERNAME/"$USERNAME" ./configuration.nix
-USERPASS=$(echo "$USERPASS" | sed "s/\//\\\//g") # escape sed delimiters
-sed -i s/USERPASS/"$USERPASS" ./configuration.nix
-ROOTPASS=$(echo "$ROOTPASS" | sed "s/\//\\\//g") # escape sed delimiters
-sed -i s/ROOTPASS/"$ROOTPASS" ./configuration.nix
-sed -i s/HOSTNAME/"$HOSTNAME" ./configuration.nix
-sed -i s/TIMEZONE/"$TIMEZONE" ./configuration.nix
+sed -i s/USERNAME/"$USERNAME"/ ./configuration.nix
+sed -i "s|USERPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$USERPASS'" -p mkpasswd)|" ./configuration.nix
+sed -i "s|ROOTPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$ROOTPASS'" -p mkpasswd)|" ./configuration.nix
+sed -i s/HOSTNAME/"$HOSTNAME"/ ./configuration.nix
+sed -i "s|TIMEZONE|$TIMEZONE|" ./configuration.nix
+
+cp ./configuration.nix /mnt/etc/nixos/configuration.nix
+
+# Install
+nixos-install --no-root-passwd
+echo "Installation complete, rebooting in 5 seconds"
+sleep 5
+reboot
