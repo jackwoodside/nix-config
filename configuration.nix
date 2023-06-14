@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./persistence-home
+    ./persistence-home
     ./persistence-nixos.nix
   ];
 

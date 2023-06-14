@@ -10,13 +10,12 @@ in
   imports = [ "${impermanence}/nixos.nix" ];
 
   environment.persistence."/nix/persist" = {
-    # Persistent directories
     directories = [
       "/etc/nixos"
       "/etc/NetworkManager/system-connections"
       "/var/log"
     ];
-    # Persistent files
+
     files = [
       "/etc/machine-id"
     ];

@@ -58,12 +58,15 @@ if [ "$NVIDIA" = "y" ]; then
     sed -i /'# Graphics'/a'\  services.xserver.videoDriver = [ "nvidia" ];' ./configuration.nix
 fi
 sed -i s/USERNAME/"$USERNAME"/ ./configuration.nix
+sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/default.nix
+sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/persistence.nix
 sed -i "s|USERPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$USERPASS'" -p mkpasswd)|" ./configuration.nix
 sed -i "s|ROOTPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$ROOTPASS'" -p mkpasswd)|" ./configuration.nix
 sed -i s/HOSTNAME/"$HOSTNAME"/ ./configuration.nix
 sed -i "s|TIMEZONE|$TIMEZONE|" ./configuration.nix
 
-cp ./*.nix /mnt/etc/nixos
+cp ./* /mnt/etc/nixos
+rm /mnt/etc/nixos/install.sh
 
 # Install
 nixos-install --no-root-passwd
