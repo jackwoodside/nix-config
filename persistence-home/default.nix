@@ -18,7 +18,7 @@ in
     imports = [
       "${impermanence}/home-manager.nix"
       ./persistence.nix
-      # ./programs
+      ./programs
     ];
     programs.home-manager.enable = true;
 

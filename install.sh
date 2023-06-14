@@ -60,6 +60,10 @@ fi
 sed -i s/USERNAME/"$USERNAME"/ ./configuration.nix
 sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/default.nix
 sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/persistence.nix
+sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/programs/fish.nix
+sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/programs/x.nix
+sed -i s/USERNAME/"$USERNAME"/ ./persistence-home/programs/scripts/lock
+
 sed -i "s|USERPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$USERPASS'" -p mkpasswd)|" ./configuration.nix
 sed -i "s|ROOTPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$ROOTPASS'" -p mkpasswd)|" ./configuration.nix
 sed -i s/HOSTNAME/"$HOSTNAME"/ ./configuration.nix
