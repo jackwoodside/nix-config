@@ -2,8 +2,23 @@
 {
   home.persistence."/nix/persist/home/USERNAME" = {
     directories = [
-      ".local/share/Steam"
+      # Bitwarden
+      ".config/Bitwarden\ CLI"
+
+      # Firefox
+      ".mozilla/firefox"
+
+      # Spotify
+      ".cache/spotify/Storage"
+      ".config/spotify"
+
+      # ssh
       ".ssh"
+
+      # Steam
+      ".local/share/Steam"
+
+      # Misc.
       "Documents"
       "Downloads"
       "Pictures"
