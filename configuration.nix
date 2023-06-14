@@ -3,6 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
+    # ./persistence-home
+    ./persistence-nixos.nix
   ];
 
   # Audio
@@ -48,7 +50,10 @@
         greeter.enable = false;
       };
     };
-    windowManager.spectrwm.enable = true;
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
   };
 
   # Networking
@@ -75,9 +80,6 @@
     fish.enable = true;
   };
   services.udisks2.enable = true;
-
-  # Persistence
-  environment.etc."machine-id".source = "/nix/persist/etc/machine-id";
 
   # Timezone
   time.timeZone = "TIMEZONE";

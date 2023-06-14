@@ -47,14 +47,6 @@ mount "$DISK"-part1 /mnt/nix
 mkdir -p /mnt/boot
 mount "$DISK"-part2 /mnt/boot
 
-mkdir -p /mnt/nix/persist/etc/nixos
-mkdir -p /mnt/etc/nixos
-mount -o bind /mnt/nix/persist/etc/nixos /mnt/etc/nixos
-
-mkdir -p /mnt/nix/persist/var/log
-mkdir -p /mnt/var/log
-mount -o bind /mnt/nix/persist/var/log /mnt/var/log
-
 # Generate the config
 nixos-generate-config --root /mnt
 
@@ -71,7 +63,7 @@ sed -i "s|ROOTPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$ROOTPASS'" -p mkpass
 sed -i s/HOSTNAME/"$HOSTNAME"/ ./configuration.nix
 sed -i "s|TIMEZONE|$TIMEZONE|" ./configuration.nix
 
-cp ./configuration.nix /mnt/etc/nixos/configuration.nix
+cp ./*.nix /mnt/etc/nixos
 
 # Install
 nixos-install --no-root-passwd
