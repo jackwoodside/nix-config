@@ -71,6 +71,7 @@ sed -i "s|TIMEZONE|$TIMEZONE|" ./configuration.nix
 
 cp -r ./* /mnt/etc/nixos/
 rm /mnt/etc/nixos/install.sh
+rm /mnt/etc/nixos/README.md
 
 # Install
 nixos-install --no-root-passwd
