@@ -7,10 +7,10 @@ echo "Enter the path of the disk to install NixOS on:"
 read -r DISK
 echo "User name:"
 read -r USERNAME
-echo "User password:"
-read -r USERPASS
-echo "Root password:"
-read -r ROOTPASS
+echo "User password (hidden):"
+read -s -r USERPASS
+echo "Root password (hidden):"
+read -s -r ROOTPASS
 echo "Hostname:"
 read -r HOSTNAME
 echo "Timezone (Country/City):"
