@@ -69,7 +69,8 @@ sed -i "s|ROOTPASS|$(nix-shell --run "mkpasswd -m SHA-512 '$ROOTPASS'" -p mkpass
 sed -i s/HOSTNAME/"$HOSTNAME"/ ./configuration.nix
 sed -i "s|TIMEZONE|$TIMEZONE|" ./configuration.nix
 
-cp -r "$(ls | grep -v '^install.sh$')" /mnt/etc/nixos/
+cp -r ./* /mnt/etc/nixos/
+rm /mnt/etc/nixos/install.sh
 
 # Install
 nixos-install --no-root-passwd
