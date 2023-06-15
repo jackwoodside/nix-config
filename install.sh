@@ -74,7 +74,7 @@ rm /mnt/etc/nixos/install.sh
 rm /mnt/etc/nixos/README.md
 
 # Install
-nixos-install --no-root-passwd
+nixos-install --no-root-passwd || (echo "Installation failed" && exit)
 echo "Installation complete, rebooting in 5 seconds"
 sleep 5
 reboot

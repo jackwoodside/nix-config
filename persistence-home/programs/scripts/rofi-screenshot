@@ -14,7 +14,7 @@ elif [ "$ANS" == "" ]; then
 else
 	exit 1
 fi
-maim --hidecursor --quiet --quality=3 --format='png' $args "$path" && {
+maim --hidecursor --quiet --quality=3 --format='png' "$args" "$path" && {
 	notify-send "Saved as $name"
 
 	xclip -selection clipboard -target 'image/png' -in "$path"
