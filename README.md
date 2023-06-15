@@ -1,7 +1,6 @@
 # Installation from ISO
 ```bash
-nix-shell -p git
-git clone https://github.com/jackwoodside/nix-config.git
-cd nix-config
+curl -L http://github.com/jackwoodside/nix-config/archive/main.tar.gz | tar xzf -
+cd nix-config-main
 sudo ./install.sh
 ```
