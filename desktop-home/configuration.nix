@@ -25,7 +25,7 @@
     systemd-boot.enable = true;
     timeout = 3;
   };
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems.ntfs = true;
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
