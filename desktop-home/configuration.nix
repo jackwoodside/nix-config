@@ -83,6 +83,7 @@
       isNormalUser = true;
       shell = pkgs.fish;
     };
+  users.users.root.initialHashedPassword = "$y$j9T$hHJU9LiIXcw.AfA3Aaltt0$dnxvim6hAyNEaRJX6iZ9D/TTqAGkesaerpae4OJPFiC";
 
 
   # X11
