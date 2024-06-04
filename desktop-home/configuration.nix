@@ -89,18 +89,16 @@
   services.xserver = {
     enable = true;
     xkb.layout = "us";
-    windowManager.bspwm.enable = true;
-  };
-  services.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "jack";
-    };
-    lightdm = {
+    displayManager.lightdm = {
       enable = true;
       autoLogin.timeout = 0;
       greeter.enable = false;
     };
+    windowManager.bspwm.enable = true;
+  };
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "jack";
   };
 
 }
