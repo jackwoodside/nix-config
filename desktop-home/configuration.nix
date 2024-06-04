@@ -68,7 +68,7 @@
     dconf.enable = true;
     fish.enable = true;
   };
-  fonts.fonts = with pkgs; [ jetbrains-mono ];
+  fonts.packages = with pkgs; [ jetbrains-mono ];
   services.udisks2.enable = true;
   nixpkgs.config.allowUnfree = true;
 
@@ -88,19 +88,19 @@
   # X11
   services.xserver = {
     enable = true;
-    layout = "us";
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "jack";
-      };
-      lightdm = {
-        enable = true;
-        autoLogin.timeout = 0;
-        greeter.enable = false;
-      };
-    };
+    xkb.layout = "us";
     windowManager.bspwm.enable = true;
+  };
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "jack";
+    };
+    lightdm = {
+      enable = true;
+      autoLogin.timeout = 0;
+      greeter.enable = false;
+    };
   };
 
 }
