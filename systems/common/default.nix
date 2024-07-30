@@ -3,11 +3,6 @@
 {
   system.stateVersion = "24.05";
 
-  imports = [
-    ./disk-configuration.nix
-    ./hardware-configuration.nix
-  ];
-
   # Audio
   security.rtkit.enable = true;
   services.pipewire = {
@@ -34,7 +29,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # Graphics
@@ -43,29 +38,13 @@
     driSupport32Bit = true;
     extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Networking
-  networking = {
-    hostName = "europa";
-    networkmanager.enable = true;
-  };
-  services.globalprotect.enable = true;
+  networking.networkmanager.enable = true;
 
   # Packages
-  environment = {
-    systemPackages = with pkgs; [
-      git
-      helix
-      nil
-      nixpkgs-fmt
-      wget
-      vim
-    ];
-    pathsToLink = [ "/share/fish" ];
-  };
+  environment.pathsToLink = [ "/share/fish" ];
   programs = {
-    dconf.enable = true;
     fish.enable = true;
   };
   fonts.packages = with pkgs; [ jetbrains-mono ];
@@ -76,30 +55,11 @@
   time.timeZone = "Australia/Sydney";
 
   # Users
-  users.users.jack =
-    {
+  users.mutableUsers = false;
+  users.users.jack = {
       extraGroups = [ "networkmanager" "video" "wheel" ];
       home = "/home/jack";
       isNormalUser = true;
       shell = pkgs.fish;
-    };
-  users.users.root.initialHashedPassword = "$y$j9T$hHJU9LiIXcw.AfA3Aaltt0$dnxvim6hAyNEaRJX6iZ9D/TTqAGkesaerpae4OJPFiC";
-
-
-  # X11
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    displayManager.lightdm = {
-      enable = true;
-      autoLogin.timeout = 0;
-      greeter.enable = false;
-    };
-    windowManager.bspwm.enable = true;
   };
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "jack";
-  };
-
 }

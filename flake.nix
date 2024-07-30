@@ -15,7 +15,8 @@
           modules = [
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
             disko.nixosModules.disko
-            ./desktop-home/configuration.nix
+            ./systems/common
+            ./systems/desktop-home
           ];
         };
       };
