@@ -11,7 +11,13 @@
     };
   };
 
-  outputs = { nixpkgs, disko, sops-nix, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      disko,
+      sops-nix,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         # ISO

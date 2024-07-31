@@ -23,7 +23,10 @@
   boot.supportedFilesystems.ntfs = true;
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Garbage collection
   nix.gc = {
@@ -57,9 +60,14 @@
   # Users
   users.mutableUsers = false;
   users.users.jack = {
-    extraGroups = [ "networkmanager" "video" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "video"
+      "wheel"
+    ];
     home = "/home/jack";
     isNormalUser = true;
     shell = pkgs.fish;
+    password = "test";
   };
 }
