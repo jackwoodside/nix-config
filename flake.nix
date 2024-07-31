@@ -14,6 +14,13 @@
   outputs = { nixpkgs, disko, sops-nix, ... }@inputs:
     {
       nixosConfigurations = {
+        # ISO
+        iso = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./systems/iso.nix ];
+        };
+
+        # Desktop (Home)
         desktop-home = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
