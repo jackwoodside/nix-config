@@ -5,9 +5,13 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, disko, ... }@inputs:
+  outputs = { nixpkgs, disko, sops-nix, ... }@inputs:
     {
       nixosConfigurations = {
         desktop-home = nixpkgs.lib.nixosSystem {
@@ -15,6 +19,7 @@
           modules = [
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./systems/common
             ./systems/desktop-home
           ];
