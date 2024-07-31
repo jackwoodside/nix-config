@@ -57,9 +57,9 @@
   # Users
   users.mutableUsers = false;
   users.users.jack = {
-      extraGroups = [ "networkmanager" "video" "wheel" ];
-      home = "/home/jack";
-      isNormalUser = true;
-      shell = pkgs.fish;
+    extraGroups = [ "networkmanager" "video" "wheel" ];
+    home = "/home/jack";
+    isNormalUser = true;
+    shell = pkgs.fish;
   };
 }
