@@ -6,6 +6,7 @@
   # Imports
   imports = [
     ./git.nix
+    ./helix.nix
     ./hyprland.nix
     ./spotify.nix
   ];
