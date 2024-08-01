@@ -70,4 +70,9 @@
     shell = pkgs.fish;
     password = "test";
   };
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.jack = import ../../programs/common;
+  };
 }
