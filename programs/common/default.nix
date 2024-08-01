@@ -5,11 +5,13 @@
 
   # Imports
   imports = [
+    ./fish.nix
+    ./fzf.nix
     ./git.nix
     ./helix.nix
     ./hyprland.nix
     ./kitty.nix
-    ./spotify.nix
+    ./starship.nix
   ];
 
   # Font management
@@ -22,8 +24,6 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     bitwarden-cli # TODO
-    discord # TODO
     firefox # TODO
-    kitty # TODO
   ];
 }
