@@ -4,7 +4,11 @@
   home.stateVersion = "24.05";
 
   # Imports
-  imports = [ ./hyprland.nix ];
+  imports = [
+    ./git.nix
+    ./hyprland.nix
+    ./spotify.nix
+  ];
 
   # Font management
   fonts.fontconfig.enable = true;
@@ -15,6 +19,9 @@
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    # discord
+    bitwarden-cli # TODO
+    discord # TODO
+    firefox # TODO
+    kitty # TODO
   ];
 }

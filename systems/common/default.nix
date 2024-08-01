@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   system.stateVersion = "24.05";
@@ -40,6 +40,10 @@
     enable = true;
     driSupport32Bit = true;
     extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  };
+  services.greetd = {
+    enable = true;
+    settings.default_session.command = "${lib.getExe pkgs.greetd.tuigreet} --cmd Hyprland";
   };
 
   # Networking
