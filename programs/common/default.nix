@@ -8,6 +8,7 @@
     ./git.nix
     ./helix.nix
     ./hyprland.nix
+    ./kitty.nix
     ./spotify.nix
   ];
 

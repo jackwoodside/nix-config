@@ -19,9 +19,9 @@
         "$mod, space, exec, ${pkgs.wofi}/bin/wofi -S drun"
 
         # Windows
-        # "$mod, f, fullscreen, 0"
-        # "$mod SHIFT, f, fullscreen, 1"
-        # "$mod SHIFT, q, killactive"
+        "$mod, f, fullscreen, 1"
+        "$mod SHIFT, f, fullscreen, 0"
+        "$mod SHIFT, q, killactive"
 
         # Workspaces
         # "$mod, 1, workspace 1"
@@ -51,8 +51,8 @@
       ];
 
       general = {
-        gaps_in = 10;
-        gaps_out = 0;
+        gaps_in = 5;
+        gaps_out = 10;
       };
 
       misc = {
