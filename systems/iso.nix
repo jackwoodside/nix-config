@@ -13,6 +13,5 @@
     git
     helix
     nil
-    nixfmt-rfc-style
   ];
 }
