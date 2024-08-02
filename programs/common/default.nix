@@ -5,6 +5,7 @@
 
   # Imports
   imports = [
+    ./bat.nix
     ./fish.nix
     ./fzf.nix
     ./git.nix

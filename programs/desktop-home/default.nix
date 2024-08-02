@@ -2,7 +2,10 @@
 
 {
   # Imports
-  imports = [ ./spotify.nix ];
+  imports = [
+    ./hyprland.nix
+    ./spotify.nix
+  ];
 
   home.packages = with pkgs; [ webcord ];
 }

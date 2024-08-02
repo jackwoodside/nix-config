@@ -16,7 +16,7 @@
     # set -gx MANPAGER 'nvim +Man!'
     shellAliases = {
       c = "clear";
-      cat = "${pkgs.bat}/bin/bat"; # TODO
+      cat = "${pkgs.bat}/bin/bat";
       find = "${pkgs.fd}/bin/fd";
       grep = "${pkgs.ripgrep}/bin/rg";
       ls = "${pkgs.eza}/bin/eza --icons -T -L=1";

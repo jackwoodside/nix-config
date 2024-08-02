@@ -44,8 +44,8 @@
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
 
         # Zoom
-        "$mod, z, exec, hyprctl keyword cursor:zoom_factor 1.0"
-        "$mod SHIFT, z, exec, hyprctl keyword cursor:zoom_factor 3.0"
+        "$mod, z, exec, hyprctl keyword cursor:zoom_factor 3.0"
+        "$mod SHIFT, z, exec, hyprctl keyword cursor:zoom_factor 1.0"
       ];
       binde = [
         # Audio
@@ -67,6 +67,9 @@
       };
 
       decoration = {
+        blur = {
+          enabled = false;
+        };
         drop_shadow = false;
       };
 
