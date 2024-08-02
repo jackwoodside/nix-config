@@ -13,6 +13,7 @@
     ./hyprland.nix
     ./kitty.nix
     ./starship.nix
+    ./waybar
   ];
 
   # Font management

@@ -4,9 +4,11 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      "$mod" = "SUPER";
+      # Autostart
+      exec-once = [ "waybar" ];
 
       # Bindings
+      "$mod" = "SUPER";
       bind = [
         "$mod, Return, exec, ${pkgs.kitty}/bin/kitty"
 
@@ -74,6 +76,12 @@
         drop_shadow = false;
       };
 
+      # layout
+      dwindle = {
+        force_split = 2;
+        smart_resizing = false;
+      };
+
       misc = {
         background_color = "rgb(1e1e2e)";
         disable_autoreload = true;
@@ -81,10 +89,8 @@
         initial_workspace_tracking = 2;
       };
 
-      windowrule = [
-        # Floating
-        "float,title:(Bitwarden Password Manager)"
-      ];
+      # workspace = [ 
+      # ];
     };
   };
 }
