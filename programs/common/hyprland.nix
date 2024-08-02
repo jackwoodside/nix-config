@@ -54,6 +54,7 @@
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
 
+      # Settings
       general = {
         border_size = 2;
         "col.active_border" = "rgb(cdd6f4)";
@@ -79,6 +80,11 @@
         disable_hyprland_logo = true;
         initial_workspace_tracking = 2;
       };
+
+      windowrule = [
+        # Floating
+        "float,title:(Bitwarden Password Manager)"
+      ];
     };
   };
 }
