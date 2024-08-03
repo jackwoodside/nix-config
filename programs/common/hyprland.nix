@@ -21,8 +21,24 @@
         "$mod, space, exec, ${pkgs.wofi}/bin/wofi -S drun"
 
         # Windows
+
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
+        "$mod, x, movecurrentworkspacetomonitor, +1"
+
+        "$mod SHIFT, space, togglefloating"
+
         "$mod, f, fullscreen, 1"
         "$mod SHIFT, f, fullscreen, 0"
+
         "$mod SHIFT, q, killactive"
 
         # Workspaces
@@ -55,6 +71,7 @@
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
+      bindm = [ "$mod, mouse:272, movewindow" ];
 
       # Settings
       general = {
@@ -89,8 +106,17 @@
         initial_workspace_tracking = 2;
       };
 
-      # workspace = [ 
-      # ];
+      workspace = [
+        "1, defaultName:"
+        "2, defaultName:"
+        "3, defaultName:"
+        "4, defaultName:"
+        "5, defaultName:"
+        "6, defaultName:"
+        "7, defaultName:"
+        "8, defaultName:"
+        "9, defaultName:"
+      ];
     };
   };
 }
