@@ -11,7 +11,9 @@
     ./fzf.nix
     ./git.nix
     ./helix.nix
+    ./hypridle.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./kitty.nix
     ./networkmanager-dmenu.nix
     ./starship.nix
