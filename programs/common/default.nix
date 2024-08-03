@@ -12,6 +12,7 @@
     ./helix.nix
     ./hyprland.nix
     ./kitty.nix
+    ./networkmanager-dmenu.nix
     ./starship.nix
     ./waybar
   ];
