@@ -9,6 +9,7 @@
     settings = {
       confirm_os_window_close = 0;
       enable_audio_bell = false;
+      mouse_hide_wait = 0;
 
       # Theme
       foreground = "#cdd6f4";

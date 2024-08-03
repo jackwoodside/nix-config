@@ -30,15 +30,15 @@
 }
 
 #waybar {
-  background: @base;
-  color: @text;
+  background-color: @base;
 }
 
 /* Workspaces */
 #workspaces button {
-  background-color: @transparent;
+ background-color: @base;
   border-radius: 0;
   color: @overlay0;
+  padding: 5px 5px;
 }
 
 #workspaces button.visible {
@@ -56,11 +56,53 @@
   color: @text;
 }
 
+/* Audio */
+#wireplumber {
+  background-color: @text;
+  color: @base;
+  padding: 5px 5px;
+}
+
+#wireplumber.muted {
+  background-color: @overlay0;
+}
+
+/* Backlight */
+#backlight {
+  background-color: @text;
+  color: @base;
+  padding: 5px 5px;
+}
+
+/* Battery */
+#battery {
+  background-color: @text;
+  color: @base;
+  padding: 5px 5px;
+}
+
+#battery.warning {
+  background-color: @orange;
+}
+
+#battery.critical {
+  background-color: @red;
+}
+
+/* Clock */
+#clock {
+  background-color: @text;
+  color: @base;
+  padding: 5px 5px;
+}
+
 /* Network */
 #network {
-  color: @text;
+  background-color: @text;
+  color: @base;
+  padding: 5px 9px 5px 5px;
 }
 
 #network.disconnected {
-  color: @red;
+  background-color: @red;
 }

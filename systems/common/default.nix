@@ -53,6 +53,7 @@
   environment.pathsToLink = [ "/share/fish" ];
   programs = {
     fish.enable = true;
+    xwayland.enable = true;
   };
   fonts.packages = with pkgs; [ jetbrains-mono ];
   services.udisks2.enable = true;

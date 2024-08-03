@@ -3,9 +3,10 @@
 {
   programs.waybar.settings.mainBar = {
     modules-right = [
-      "network"
+      "wireplumber"
       "battery"
       "backlight"
+      "network"
       "clock"
     ];
 

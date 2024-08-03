@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.waybar = {
@@ -7,7 +7,8 @@
       mainBar = {
         layer = "top";
         position = "bottom";
-        height = 1; # expands to content
+        spacing = 5;
+
         modules-left = [ "hyprland/workspaces" ];
         # modules-right defined per system
 
@@ -19,7 +20,7 @@
 
         "backlight" = {
           # device defined per system
-          format = "{icon} :{percent}%";
+          format = "{icon} {percent}%";
           format-icons = [
             "󰪟"
             "󰪡"
@@ -30,12 +31,16 @@
         };
 
         "battery" = {
-          format = "{icon} :{capacity}%";
+          format = "{icon} {capacity}%";
           format-icons = [
             ""
             ""
             ""
             ""
+          ];
+          states = [
+            "warning = 25"
+            "critical = 10"
           ];
           tooltip = false;
         };
@@ -47,6 +52,20 @@
         "network" = {
           format = "󰖩";
           format-disconnected = "󰖪";
+          tooltip = false;
+        };
+
+        "wireplumber" = {
+          format = "{icon} {volume}%";
+          format-muted = "󰝟 {volume}%";
+          format-icons = [
+            "󰕿"
+            "󰖀"
+            "󰖀"
+            "󰕾"
+          ];
+          on-click = "${pkgs.kitty}/bin/kitty ${pkgs.pulsemixer}/bin/pulsemixer";
+          scroll-step = 0;
           tooltip = false;
         };
       };
