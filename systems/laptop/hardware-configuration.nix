@@ -11,7 +11,7 @@
   boot = {
     initrd.availableKernelModules = [
       "nvme"
-      "sdmod"
+      "sd_mod"
       "usbhid"
       "usb_storage"
       "xhci_pci"

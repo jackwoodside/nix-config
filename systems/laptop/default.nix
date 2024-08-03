@@ -31,5 +31,5 @@
   };
 
   # Users
-  # home-manager.users.jack = import ../../programs/laptop;
+  home-manager.users.jack = import ../../programs/laptop;
 }
