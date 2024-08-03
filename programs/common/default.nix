@@ -11,7 +11,7 @@
     ./fzf.nix
     ./git.nix
     ./helix.nix
-    ./hypridle.nix
+    ./hypridle.nix # TODO
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
