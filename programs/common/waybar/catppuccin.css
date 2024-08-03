@@ -30,15 +30,37 @@
 }
 
 #waybar {
-  /* change to transparent when done */
-  background: @crust;
+  background: @base;
   color: @text;
 }
 
+/* Workspaces */
 #workspaces button {
-  color: @red;
+  background-color: @transparent;
+  border-radius: 0;
+  color: @overlay0;
 }
 
-# workspaces button.visible {
-  color: @blue;
+#workspaces button.visible {
+  background-color: @overlay0;
+  color: @base;
+}
+
+#workspaces button.active {
+  background-color: @text;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @text;
+}
+
+/* Network */
+#network {
+  color: @text;
+}
+
+#network.disconnected {
+  color: @red;
 }

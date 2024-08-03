@@ -2,7 +2,10 @@
 
 {
   # Imports
-  imports = [ ./hyprland.nix ];
+  imports = [
+    ./hyprland.nix
+    ./waybar.nix
+  ];
 
   home.packages = with pkgs; [ webcord ];
 }
