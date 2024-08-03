@@ -43,6 +43,19 @@
             ./systems/desktop-home
           ];
         };
+
+        # Laptop
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
+            disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
+            ./systems/common
+            ./systems/laptop
+          ];
+        };
       };
     };
 }
