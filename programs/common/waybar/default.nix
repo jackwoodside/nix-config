@@ -7,15 +7,14 @@
       mainBar = {
         layer = "top";
         position = "bottom";
-        height = 30;
+        height = 1; # expands to content
         modules-left = [ "hyprland/workspaces" ];
-        modules-right = [
-          "pulseaudio"
-          "backlight"
-          "network"
-          "battery"
-          "clock"
-        ];
+        # modules-right defined per system
+
+        "hyprland/workspaces" = {
+          format = "{id} {name}";
+          sort-by = "id";
+        };
       };
     };
     style = ./catppuccin.css;

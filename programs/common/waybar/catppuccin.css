@@ -30,7 +30,15 @@
 }
 
 #waybar {
-  background: @transparent;
+  /* change to transparent when done */
+  background: @crust;
   color: @text;
-  margin: 5px 5px;
+}
+
+#workspaces button {
+  color: @red;
+}
+
+# workspaces button.visible {
+  color: @blue;
 }
