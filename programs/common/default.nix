@@ -6,6 +6,7 @@
   # Imports
   imports = [
     ./bat.nix
+    ./dunst.nix
     ./fish.nix
     ./fzf.nix
     ./git.nix
