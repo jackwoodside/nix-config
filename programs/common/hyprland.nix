@@ -20,8 +20,10 @@
         # Menus
         "$mod, space, exec, ${pkgs.wofi}/bin/wofi -S drun"
 
-        # Windows
+        # Resizing
+        "$mod, r, submap, resize" # Submap defined at the end
 
+        # Windows
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
@@ -118,5 +120,23 @@
         "9, defaultName:"
       ];
     };
+
+    # Submaps
+    extraConfig = ''
+      submap=resize
+
+      binde=,left,resizeactive,-10 0
+      binde=,right,resizeactive,10 0
+      binde=,up,resizeactive,0 -10
+      binde=,down,resizeactive,0 10
+
+      binde=SHIFT,left,resizeactive,-1 0
+      binde=SHIFT,right,resizeactive,1 0
+      binde=SHIFT,up,resizeactive,0 -1
+      binde=SHIFT,down,resizeactive,0 1
+
+      bind=,escape,submap,reset 
+      submap=reset
+    '';
   };
 }
