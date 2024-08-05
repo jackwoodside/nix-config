@@ -16,13 +16,13 @@
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
       disko,
       home-manager,
       sops-nix,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations = {
         # ISO
@@ -38,6 +38,11 @@
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
             sops-nix.nixosModules.sops
             ./systems/common
             ./systems/desktop-home
@@ -51,6 +56,11 @@
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
             sops-nix.nixosModules.sops
             ./systems/common
             ./systems/laptop
