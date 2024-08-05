@@ -25,9 +25,8 @@
 
   # Misc. programs
   home.packages = with pkgs; [
-    font-awesome
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
 
     bitwarden-cli # TODO
     firefox # TODO

@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   programs.hyprlock = {
@@ -19,7 +19,7 @@
 
       image = [
         {
-          path = "/home/jack/Downloads/lock.png";
+          path = "${inputs.self}/images/lock.png";
           size = 500;
           border_color = "rgb(cdd6f4)";
           border_size = 3;
