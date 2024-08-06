@@ -18,6 +18,7 @@
     ./networkmanager-dmenu.nix
     ./sioyek.nix
     ./starship.nix
+    ./udiskie.nix
     ./waybar
   ];
 
