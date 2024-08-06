@@ -35,7 +35,7 @@ window {
   margin: 0px;
   padding: 10px;
   border: 2px solid @text;
-  border-radius: 0.1em;
+  border-radius: 0;
   background-color: @base;
 }
 
@@ -72,7 +72,7 @@ window {
 }
 
 #input * {
-  outline: 2px solid @text!important;
+  outline: 2px solid @text;
 }
 
 /* Text */
@@ -101,5 +101,5 @@ window {
 }
 
 #entry:drop(active) {
-  background-color: @text!important;
+  background-color: @text;
 }
