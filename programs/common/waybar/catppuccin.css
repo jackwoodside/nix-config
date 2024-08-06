@@ -100,7 +100,7 @@
 #network {
   background-color: @text;
   color: @base;
-  padding: 5px;
+  padding: 5px 5px;
 }
 
 #network.disconnected {
