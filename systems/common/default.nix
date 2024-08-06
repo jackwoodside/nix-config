@@ -55,6 +55,7 @@
     fish.enable = true;
     xwayland.enable = true;
   };
+  programs.dconf.enable = true; # For GTK themes
   fonts.packages = with pkgs; [ jetbrains-mono ];
   services.udisks2.enable = true;
   nixpkgs.config.allowUnfree = true;
