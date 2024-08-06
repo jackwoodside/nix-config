@@ -17,6 +17,7 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
+    ./mpv.nix
     ./networkmanager-dmenu.nix
     ./sioyek.nix
     ./starship.nix
