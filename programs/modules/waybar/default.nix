@@ -70,6 +70,6 @@
         };
       };
     };
-    style = ./catppuccin.css;
+    style = ./waybar.css;
   };
 }
