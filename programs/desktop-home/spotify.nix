@@ -3,6 +3,12 @@
 {
   programs.spotify-player = {
     enable = true;
+    settings = {
+      cover_image_length = 9;
+      cover_image_width = 9;
+      enable_notify = false;
+      theme = "catppuccin-mocha";
+    };
     themes = [
       {
         name = "catppuccin-mocha";
@@ -34,8 +40,5 @@
         };
       }
     ];
-    settings = {
-      theme = "catppuccin-mocha";
-    };
   };
 }
