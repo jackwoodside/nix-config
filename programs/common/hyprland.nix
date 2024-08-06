@@ -119,6 +119,12 @@
         "8, defaultName:"
         "9, defaultName:"
       ];
+
+      # Windows
+      windowrulev2 = [
+        "noborder, fullscreen:1"
+        "center, floating:1"
+      ];
     };
 
     # Submaps
