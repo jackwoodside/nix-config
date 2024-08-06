@@ -11,11 +11,12 @@
     ./fzf.nix
     ./git.nix
     ./helix.nix
-    ./hypridle.nix # TODO
+    ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
     ./networkmanager-dmenu.nix
+    ./sioyek.nix
     ./starship.nix
     ./waybar
   ];
