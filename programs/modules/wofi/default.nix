@@ -12,6 +12,6 @@
       show = "drun";
       sort_order = "alphabetical";
     };
-    style = builtins.readFile ./default.css;
+    style = builtins.readFile ./wofi.css;
   };
 }
