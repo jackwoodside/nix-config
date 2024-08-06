@@ -7,6 +7,9 @@
       columns = 2;
       hide_scroll = true;
       matching = "fuzzy";
+      no_actions = true;
+      prompt = "";
+      show = "drun";
       sort_order = "alphabetical";
     };
     style = builtins.readFile ./default.css;
