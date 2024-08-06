@@ -44,7 +44,7 @@
               };
             }
             sops-nix.nixosModules.sops
-            ./systems/common
+            ./systems
             ./systems/desktop-home
           ];
         };
@@ -62,7 +62,7 @@
               };
             }
             sops-nix.nixosModules.sops
-            ./systems/common
+            ./systems
             ./systems/laptop
           ];
         };
