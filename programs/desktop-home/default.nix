@@ -3,8 +3,9 @@
 {
   # Imports
   imports = [
+    ../modules/spotify.nix
+
     ./hyprland.nix
-    ./spotify.nix
     ./waybar.nix
   ];
 
