@@ -19,6 +19,7 @@
     ./modules/kitty.nix
     ./modules/mpv.nix
     ./modules/networkmanager-dmenu.nix
+    ./modules/nix-index.nix
     ./modules/sioyek.nix
     ./modules/starship.nix
     ./modules/udiskie.nix
