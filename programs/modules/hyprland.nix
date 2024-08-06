@@ -126,6 +126,10 @@
           "9, defaultName:"
         ];
 
+        xwayland = {
+          force_zero_scaling = true;
+        };
+
         # Windows
         windowrulev2 = [
           "noborder, fullscreen:1"

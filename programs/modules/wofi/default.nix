@@ -7,6 +7,7 @@
       columns = 2;
       hide_scroll = true;
       insenitive = true;
+      matching = "fuzzy";
       no_actions = true;
       prompt = "";
       show = "drun";
