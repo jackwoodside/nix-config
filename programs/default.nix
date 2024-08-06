@@ -24,6 +24,7 @@
     ./modules/starship.nix
     ./modules/udiskie.nix
     ./modules/waybar
+    ./modules/wofi
   ];
 
   # Font management

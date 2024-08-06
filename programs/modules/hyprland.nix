@@ -24,7 +24,7 @@
           ", XF86AudioNext, exec, ${playerctl} next"
 
           # Menus
-          "$mod, space, exec, ${wofi} -S drun"
+          "$mod, space, exec, ${wofi} -S drun -p ''"
 
           # Resizing
           "$mod, r, submap, resize" # Submap defined at the end
