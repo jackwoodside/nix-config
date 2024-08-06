@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.waybar = {
@@ -64,7 +64,7 @@
             "󰖀"
             "󰕾"
           ];
-          on-click = "${pkgs.kitty}/bin/kitty ${pkgs.pulsemixer}/bin/pulsemixer";
+          on-click = "${lib.getExe pkgs.kitty} ${lib.getExe pkgs.pulsemixer}";
           scroll-step = 0;
           tooltip = false;
         };

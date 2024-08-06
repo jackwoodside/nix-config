@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.helix = {
@@ -38,14 +38,14 @@
 
     languages = {
       language-server.nil = {
-        command = "${pkgs.nil}/bin/nil";
+        command = "${lib.getExe pkgs.nil}";
       };
       language = [
         {
           name = "nix";
           auto-format = true;
           formatter = {
-            command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+            command = "${lib.getExe pkgs.nixfmt-rfc-style}";
           };
         }
       ];

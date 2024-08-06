@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   services.hypridle =
     let
       hyprctl = "${pkgs.hyprland}/bin/hyprctl";
-      hyprlock = "${pkgs.hyprlock}/bin/hyprlock";
+      hyprlock = "${lib.getExe pkgs.hyprlock}";
     in
     {
       enable = true;
