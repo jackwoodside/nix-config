@@ -10,7 +10,9 @@
     ./fish.nix
     ./fzf.nix
     ./git.nix
+    ./gtk.nix
     ./helix.nix
+    ./htop.nix
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
