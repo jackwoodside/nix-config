@@ -79,6 +79,6 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.jack = import ../../programs;
+    users.jack = import ../programs;
   };
 }
