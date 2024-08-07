@@ -37,10 +37,22 @@
     };
 
     languages = {
-      language-server.nil = {
-        command = "${lib.getExe pkgs.nil}";
+      language-server = {
+        typescript-language-server = {
+          command = "${lib.getExe pkgs.nodePackages.typescript-language-server}";
+        };
+        nil = {
+          command = "${lib.getExe pkgs.nil}";
+        };
       };
       language = [
+        {
+          name = "typescript";
+          auto-format = true;
+          formatter = {
+            command = "${lib.getExe pkgs.nodePackages.prettier}";
+          };
+        }
         {
           name = "nix";
           auto-format = true;
