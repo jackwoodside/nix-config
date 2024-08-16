@@ -133,7 +133,7 @@
         # Windows
         windowrulev2 = [
           "noborder, fullscreen:1"
-          "float, class:(kitty), title:(pulsemixer)"
+          "float, class:(pulsemixer)"
         ];
       };
 

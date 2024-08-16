@@ -65,7 +65,7 @@
             "󰖀"
             "󰕾"
           ];
-          on-click = "${lib.getExe pkgs.kitty} ${lib.getExe pkgs.pulsemixer}";
+          on-click = "${lib.getExe pkgs.kitty} --class pulsemixer ${lib.getExe pkgs.pulsemixer}";
           scroll-step = 0;
           tooltip = false;
         };
