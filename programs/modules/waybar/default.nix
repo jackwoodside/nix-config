@@ -52,6 +52,7 @@
         "network" = {
           format = "󰖩";
           format-disconnected = "󰖪";
+          on-click = "${lib.getExe pkgs.networkmanager_dmenu}";
           tooltip = false;
         };
 
