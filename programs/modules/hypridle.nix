@@ -31,10 +31,11 @@
           }
 
           # After 30 minutes, suspend device
-          {
-            timeout = 1800;
-            on-timeout = "systemctl suspend";
-          }
+          # Disabled since breaks NetworkManager
+          # {
+          #   timeout = 1800;
+          #   on-timeout = "systemctl suspend";
+          # }
         ];
       };
     };
