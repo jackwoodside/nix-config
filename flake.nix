@@ -53,6 +53,24 @@
           ];
         };
 
+        # Desktop (Work)
+        desktop-work = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
+            disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
+            sops-nix.nixosModules.sops
+            ./systems
+            ./systems/desktop-work
+          ];
+        };
+
         # Laptop
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
