@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Imports
@@ -10,5 +10,5 @@
     ./waybar.nix
   ];
 
-  # home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [ steam ];
 }
