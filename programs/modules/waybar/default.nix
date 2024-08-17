@@ -22,10 +22,11 @@
           # device defined per system
           format = "{icon} {percent}%";
           format-icons = [
-            "󰪟"
-            "󰪡"
-            "󰪣"
-            "󰪥"
+            "󱩏"
+            "󱩑"
+            "󱩓"
+            "󱩕"
+            "󰛨"
           ];
           tooltip = false;
         };
