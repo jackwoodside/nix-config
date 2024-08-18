@@ -104,7 +104,8 @@
 }
 
 #idle_inhibitor.deactivated {
-  background-color: @overlay0;
+  background-color: @base;
+  color: @overlay0;
 }
 
 /* Network */
