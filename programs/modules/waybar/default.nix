@@ -10,7 +10,7 @@
         spacing = 5;
 
         modules-left = [ "hyprland/workspaces" ];
-        # modules-right defined per system
+        # other modules defined per system
 
         "hyprland/workspaces" = {
           format = "{id} {name}";
@@ -47,6 +47,15 @@
         };
 
         "clock" = {
+          tooltip = false;
+        };
+
+        "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰈈";
+            deactivated = "󰈉";
+          };
           tooltip = false;
         };
 
