@@ -104,6 +104,7 @@
         # layout
         dwindle = {
           force_split = 2;
+          preserve_split = true;
           smart_resizing = false;
         };
 
