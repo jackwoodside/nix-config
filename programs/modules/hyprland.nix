@@ -27,7 +27,7 @@
           "$mod, space, exec, ${wofi}"
 
           # Resizing
-          "$mod, r, submap, resize" # Submap defined at the end
+          "$mod, r, submap, Resize" # Submap defined at the end
 
           # Windows
           "$mod, left, movefocus, l"
@@ -139,7 +139,7 @@
 
       # Submaps
       extraConfig = ''
-        submap=resize
+        submap=Resize
 
         binde=,left,resizeactive,-10 0
         binde=,right,resizeactive,10 0

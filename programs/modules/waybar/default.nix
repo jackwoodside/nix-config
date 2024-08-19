@@ -9,14 +9,11 @@
         position = "bottom";
         spacing = 5;
 
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/submap"
+        ];
         # other modules defined per system
-
-        "hyprland/workspaces" = {
-          format = "{id} {name}";
-          sort-by = "id";
-          tooltip = false;
-        };
 
         "backlight" = {
           # device defined per system
@@ -66,6 +63,10 @@
           tooltip = false;
         };
 
+        "hyprland/submap" = {
+          tooltip = false;
+        };
+
         "wireplumber" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟 {volume}%";
@@ -77,6 +78,12 @@
           ];
           on-click = "${lib.getExe pkgs.kitty} --class pulsemixer ${lib.getExe pkgs.pulsemixer}";
           scroll-step = 0;
+          tooltip = false;
+        };
+
+        "hyprland/workspaces" = {
+          format = "{id} {name}";
+          sort-by = "id";
           tooltip = false;
         };
       };
