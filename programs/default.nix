@@ -17,7 +17,7 @@
     ./modules/hyprland.nix
     ./modules/hyprlock.nix
     ./modules/kitty.nix
-    ./modules/lf
+    ./modules/lf.nix
     ./modules/mpv.nix
     ./modules/networkmanager-dmenu.nix
     ./modules/nix-index.nix

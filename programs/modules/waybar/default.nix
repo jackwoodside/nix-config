@@ -53,6 +53,7 @@
             activated = "󰈈";
             deactivated = "󰈉";
           };
+          timeout = 60;
           tooltip = false;
         };
 
