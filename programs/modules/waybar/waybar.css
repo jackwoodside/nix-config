@@ -41,20 +41,20 @@
   padding: 5px 5px;
 }
 
-/* #workspaces button.visible { */
-  /* background-color: @overlay0; */
-  /* color: @base; */
-/* } */
+#workspaces button.visible {
+  background-color: @overlay0;
+  color: @base;
+}
 
-/* #workspaces button.active { */
-  /* background-color: @text; */
-  /* color: @base; */
-/* } */
+#workspaces button.active {
+  background-color: @text;
+  color: @base;
+}
 
-/* #workspaces button.urgent { */
-  /* background-color: @red; */
-  /* color: @text; */
-/* } */
+#workspaces button.urgent {
+  background-color: @red;
+  color: @text;
+}
 
 /* Audio */
 #wireplumber {

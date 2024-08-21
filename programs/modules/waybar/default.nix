@@ -83,7 +83,7 @@
         };
 
         "hyprland/workspaces" = {
-          format = "{id} {name}";
+          format = "{id}"; # {name}";
           sort-by = "id";
           tooltip = false;
         };

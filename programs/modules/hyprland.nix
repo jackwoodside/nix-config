@@ -115,17 +115,18 @@
           initial_workspace_tracking = 2;
         };
 
-        workspace = [
-          "1, defaultName:"
-          "2, defaultName:"
-          "3, defaultName:"
-          "4, defaultName:"
-          "5, defaultName:"
-          "6, defaultName:"
-          "7, defaultName:"
-          "8, defaultName:"
-          "9, defaultName:"
-        ];
+        # Breaks waybar for some reason
+        # workspace = [
+        #   "1, defaultName:"
+        #   "2, defaultName:"
+        #   "3, defaultName:"
+        #   "4, defaultName:"
+        #   "5, defaultName:"
+        #   "6, defaultName:"
+        #   "7, defaultName:"
+        #   "8, defaultName:"
+        #   "9, defaultName:"
+        # ];
 
         xwayland = {
           force_zero_scaling = true;
@@ -153,6 +154,7 @@
         binde=SHIFT,down,resizeactive,0 1
 
         bind=,escape,submap,reset 
+        bind=,Return,submap,reset 
         submap=reset
       '';
     };
