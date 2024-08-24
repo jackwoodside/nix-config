@@ -5,6 +5,7 @@
 
   # Imports
   imports = [
+    ./modules/ags
     ./modules/bat.nix
     ./modules/dunst.nix
     ./modules/fish.nix
@@ -17,6 +18,7 @@
     ./modules/hyprland.nix
     ./modules/hyprlock.nix
     ./modules/kitty.nix
+    ./modules/lf.nix
     ./modules/mpv.nix
     ./modules/networkmanager-dmenu.nix
     ./modules/nix-index.nix

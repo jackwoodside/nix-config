@@ -27,7 +27,7 @@
           "$mod, space, exec, ${wofi}"
 
           # Resizing
-          "$mod, r, submap, resize" # Submap defined at the end
+          "$mod, r, submap, Resize" # Submap defined at the end
 
           # Windows
           "$mod, left, movefocus, l"
@@ -104,6 +104,7 @@
         # layout
         dwindle = {
           force_split = 2;
+          preserve_split = true;
           smart_resizing = false;
         };
 
@@ -114,29 +115,33 @@
           initial_workspace_tracking = 2;
         };
 
-        workspace = [
-          "1, defaultName:"
-          "2, defaultName:"
-          "3, defaultName:"
-          "4, defaultName:"
-          "5, defaultName:"
-          "6, defaultName:"
-          "7, defaultName:"
-          "8, defaultName:"
-          "9, defaultName:"
-        ];
+        # Breaks waybar for some reason
+        # workspace = [
+        #   "1, defaultName:"
+        #   "2, defaultName:"
+        #   "3, defaultName:"
+        #   "4, defaultName:"
+        #   "5, defaultName:"
+        #   "6, defaultName:"
+        #   "7, defaultName:"
+        #   "8, defaultName:"
+        #   "9, defaultName:"
+        # ];
 
         xwayland = {
           force_zero_scaling = true;
         };
 
         # Windows
-        windowrulev2 = [ "noborder, fullscreen:1" ];
+        windowrulev2 = [
+          "noborder, fullscreen:1"
+          "float, class:(pulsemixer)"
+        ];
       };
 
       # Submaps
       extraConfig = ''
-        submap=resize
+        submap=Resize
 
         binde=,left,resizeactive,-10 0
         binde=,right,resizeactive,10 0
@@ -149,6 +154,7 @@
         binde=SHIFT,down,resizeactive,0 1
 
         bind=,escape,submap,reset 
+        bind=,Return,submap,reset 
         submap=reset
       '';
     };

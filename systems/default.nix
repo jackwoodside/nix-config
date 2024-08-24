@@ -48,6 +48,7 @@
 
   # Networking
   networking.networkmanager.enable = true;
+  services.tailscale.enable = true;
 
   # Packages
   environment.pathsToLink = [ "/share/fish" ];

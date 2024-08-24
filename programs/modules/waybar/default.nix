@@ -9,23 +9,21 @@
         position = "bottom";
         spacing = 5;
 
-        modules-left = [ "hyprland/workspaces" ];
-        # modules-right defined per system
-
-        "hyprland/workspaces" = {
-          format = "{id} {name}";
-          sort-by = "id";
-          tooltip = false;
-        };
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/submap"
+        ];
+        # other modules defined per system
 
         "backlight" = {
           # device defined per system
           format = "{icon} {percent}%";
           format-icons = [
-            "󰪟"
-            "󰪡"
-            "󰪣"
-            "󰪥"
+            "󱩏"
+            "󱩑"
+            "󱩓"
+            "󱩕"
+            "󰛨"
           ];
           tooltip = false;
         };
@@ -49,9 +47,24 @@
           tooltip = false;
         };
 
+        "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰈈";
+            deactivated = "󰈉";
+          };
+          timeout = 60;
+          tooltip = false;
+        };
+
         "network" = {
           format = "󰖩";
           format-disconnected = "󰖪";
+          on-click = "${lib.getExe pkgs.networkmanager_dmenu}";
+          tooltip = false;
+        };
+
+        "hyprland/submap" = {
           tooltip = false;
         };
 
@@ -64,8 +77,14 @@
             "󰖀"
             "󰕾"
           ];
-          on-click = "${lib.getExe pkgs.kitty} ${lib.getExe pkgs.pulsemixer}";
+          on-click = "${lib.getExe pkgs.kitty} --class pulsemixer ${lib.getExe pkgs.pulsemixer}";
           scroll-step = 0;
+          tooltip = false;
+        };
+
+        "hyprland/workspaces" = {
+          format = "{id}"; # {name}";
+          sort-by = "id";
           tooltip = false;
         };
       };

@@ -96,6 +96,18 @@
   padding: 5px 5px;
 }
 
+/* Idle Inhibitor */
+#idle_inhibitor {
+  background-color: @green;
+  color: @base;
+  padding: 5px 5px;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: @base;
+  color: @overlay0;
+}
+
 /* Network */
 #network {
   background-color: @text;
