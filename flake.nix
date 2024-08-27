@@ -35,6 +35,12 @@
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
 
+            {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
+
             ./systems
           ];
         in
