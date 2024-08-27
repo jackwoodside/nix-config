@@ -1,16 +1,17 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-colors = {
+      url = "github:misterio77/nix-colors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
@@ -28,66 +29,40 @@
       ...
     }:
     {
-      nixosConfigurations = {
-        # ISO
-        iso = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./systems/iso.nix ];
-        };
-
-        # Desktop (Home)
-        desktop-home = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+      nixosConfigurations =
+        let
           modules = [
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
             sops-nix.nixosModules.sops
             ./systems
-            ./systems/desktop-home
           ];
-        };
+        in
+        {
+          # ISO
+          iso = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [ ./systems/iso.nix ];
+          };
 
-        # Desktop (Work)
-        desktop-work = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
-            disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
-            sops-nix.nixosModules.sops
-            ./systems
-            ./systems/desktop-work
-          ];
-        };
+          # Desktop (Home)
+          desktop-home = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = modules ++ [ ./systems/desktop-home ];
+          };
 
-        # Laptop
-        laptop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
-            disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
-            sops-nix.nixosModules.sops
-            ./systems
-            ./systems/laptop
-          ];
+          # Desktop (Work)
+          desktop-work = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = modules ++ [ ./systems/desktop-work ];
+          };
+
+          # Laptop
+          laptop = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = modules ++ [ ./systems/laptop ];
+          };
         };
-      };
     };
 }

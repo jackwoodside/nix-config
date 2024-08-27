@@ -5,7 +5,6 @@
 
   # Imports
   imports = [
-    ./modules/ags
     ./modules/bat.nix
     ./modules/dunst.nix
     ./modules/fish.nix
