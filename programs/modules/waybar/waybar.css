@@ -27,6 +27,10 @@
 
 * {
   font-family: "Symbols Nerd Font Mono", "JetBrains Mono";
+
+  border: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 #waybar {
@@ -54,6 +58,13 @@
 #workspaces button.urgent {
   background-color: @red;
   color: @text;
+}
+
+/* Submap */
+#submap.Resize {
+  background-color: @red;
+  color: @base;
+  padding: 5px 5px;
 }
 
 /* Audio */

@@ -141,6 +141,7 @@
 
       # Submaps
       extraConfig = ''
+        # Resize
         submap=Resize
 
         binde=,left,resizeactive,-10 0
