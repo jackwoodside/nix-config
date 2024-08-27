@@ -5,6 +5,7 @@
   imports = [
     ../modules/discord.nix
 
+    ./hypridle.nix
     ./hyprland.nix
     ./waybar.nix
   ];
