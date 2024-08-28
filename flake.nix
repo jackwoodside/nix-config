@@ -36,11 +36,24 @@
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
 
+            # For including self.images
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
-                inherit nix-colors;
               };
+            }
+
+            {
+              home-manager.sharedModules = [
+                nix-colors.homeManagerModules.default
+                (
+                  { lib, ... }:
+                  {
+                    options.colorScheme.hashedColors = with lib; mkOption { type = types.attrsOf types.str; };
+                  }
+                )
+                { _module.args.colorSchemes = nix-colors.colorSchemes; }
+              ];
             }
 
             ./systems

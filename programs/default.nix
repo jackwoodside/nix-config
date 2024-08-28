@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  colorSchemes,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   home.stateVersion = "24.05";
@@ -27,6 +32,14 @@
     ./modules/waybar
     ./modules/wofi
   ];
+
+  # Colorscheme
+  colorScheme =
+    let
+      scheme = colorSchemes.catppuccin-mocha;
+      hashedColors = lib.mapAttrs (_: color: "#${color}") scheme.palette;
+    in
+    scheme // { inherit hashedColors; };
 
   # Font management
   fonts.fontconfig.enable = true;
