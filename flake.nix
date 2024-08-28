@@ -22,6 +22,7 @@
       nixpkgs,
       disko,
       home-manager,
+      nix-colors,
       sops-nix,
       ...
     }:
@@ -38,6 +39,7 @@
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
+                inherit nix-colors;
               };
             }
 
