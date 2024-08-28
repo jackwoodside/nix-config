@@ -1,5 +1,8 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 
+let
+  colours = config.colorScheme.hyprColors;
+in
 {
   programs.hyprlock = {
     enable = true;
@@ -21,7 +24,7 @@
         {
           path = "${inputs.self}/images/lock.png";
           size = 500;
-          border_color = "rgb(cdd6f4)";
+          border_color = colours.base05;
           border_size = 3;
           position = "0, 0";
         }
@@ -33,11 +36,11 @@
           outline_thickness = 3;
           position = "0, -350";
 
-          font_color = "rgb(cdd6f4)";
-          inner_color = "rgb(1e1e2e)";
-          outer_color = "rgb(cdd6f4)";
-          check_color = "rgb(cdd6f4)";
-          fail_color = "rgb(f38ba8)";
+          font_color = colours.base05;
+          inner_color = colours.base00;
+          outer_color = colours.base05;
+          check_color = colours.base05;
+          fail_color = colours.base08;
 
           fade_on_empty = false;
           placeholder_text = "";
