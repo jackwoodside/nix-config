@@ -1,5 +1,8 @@
-{ ... }:
+{ config, ... }:
 
+let
+  colours = config.colorScheme.hashedColors;
+in
 {
   programs.sioyek = {
     enable = true;
@@ -14,10 +17,10 @@
       "toggle_synctex" = "l";
     };
     config = {
-      "background_color" = "#1e1e2e";
+      "background_color" = colours.base00;
       "touchpad_sensitivity" = "0.4";
       "page_separator_width" = "4";
-      "page_separator_color" = "#1e1e2e";
+      "page_separator_color" = colours.base00;
       "search_url_g" = "https://www.google.com/search?q=";
       "should_launch_new_window" = "1";
       "should_use_multiple_monitors" = "0";
