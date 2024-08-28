@@ -1,5 +1,13 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
+let
+  colours = config.colorScheme.hashedColors;
+in
 {
   programs.fzf =
     let
@@ -9,18 +17,18 @@
     {
       enable = true;
       colors = {
-        "bg" = "#1e1e2e";
-        "bg+" = "#313244";
-        "fg" = "#cdd6f4";
-        "fg+" = "#cdd6f4";
-        "hl" = "#f38ba8";
-        "hl+" = "#f38ba8";
-        "header" = "#f38ba8";
-        "pointer" = "#f5e0dc";
-        "marker" = "#f5e0dc";
-        "spinner" = "#f5e0dc";
-        "prompt" = "#cba6f7";
-        "info" = "#cba6f7";
+        "bg" = colours.base00;
+        "bg+" = colours.base02;
+        "fg" = colours.base05;
+        "fg+" = colours.base05;
+        "hl" = colours.base08;
+        "hl+" = colours.base08;
+        "header" = colours.base08;
+        "pointer" = colours.base06;
+        "marker" = colours.base06;
+        "spinner" = colours.base06;
+        "prompt" = colours.base0E;
+        "info" = colours.base0E;
       };
       changeDirWidgetCommand = "${fd} --type d";
       changeDirWidgetOptions = [ "--preview '${tree} -C {} | head -200'" ];
