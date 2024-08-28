@@ -1,13 +1,16 @@
-{ ... }:
+{ config, ... }:
 
+let
+  colours = config.colorScheme.hashedColors;
+in
 {
   services.dunst = {
     enable = true;
     settings = {
       global = {
-        frame_color = "#cdd6f4";
-        background = "#1e1e2e";
-        foreground = "#cdd6f4";
+        frame_color = colours.base05;
+        background = colours.base00;
+        foreground = colours.base05;
         separator_color = "frame";
         offset = "10x10";
         transparency = "20";
@@ -28,7 +31,7 @@
         timeout = 5;
       };
       urgency_critical = {
-        frame_color = "#f38ba8";
+        frame_color = colours.base08;
         timeout = 0;
       };
     };
