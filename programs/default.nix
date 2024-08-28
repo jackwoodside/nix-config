@@ -38,8 +38,13 @@
     let
       scheme = colorSchemes.catppuccin-mocha;
       hashedColors = lib.mapAttrs (_: color: "#${color}") scheme.palette;
+      hyprColors = lib.mapAttrs (_: color: "rgb(${color})") scheme.palette;
     in
-    scheme // { inherit hashedColors; };
+    scheme
+    // {
+      inherit hashedColors;
+      inherit hyprColors;
+    };
 
   # Font management
   fonts.fontconfig.enable = true;

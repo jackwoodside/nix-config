@@ -1,5 +1,13 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
+let
+  colours = config.colorScheme.hyprColors;
+in
 {
   wayland.windowManager.hyprland =
     let
@@ -84,8 +92,8 @@
         # Settings
         general = {
           border_size = 2;
-          "col.active_border" = "rgb(cdd6f4)";
-          "col.inactive_border" = "rgb(585b70)";
+          "col.active_border" = colours.base05;
+          "col.inactive_border" = colours.base04;
           gaps_in = 5;
           gaps_out = 10;
         };
@@ -108,7 +116,7 @@
         };
 
         misc = {
-          background_color = "rgb(1e1e2e)";
+          background_color = colours.base00;
           disable_autoreload = true;
           disable_hyprland_logo = true;
           initial_workspace_tracking = 2;
