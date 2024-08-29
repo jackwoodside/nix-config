@@ -25,15 +25,6 @@ in
       bind = [
         "$mod, Return, exec, ${kitty}"
 
-        # Brightness
-        ", XF86MonBrightnessUp, exec, ${brightnessctl} set 5%+"
-        ", XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-"
-
-        # Media
-        ", XF86AudioPlay, exec, ${playerctl} play-pause"
-        ", XF86AudioPrev, exec, ${playerctl} previous"
-        ", XF86AudioNext, exec, ${playerctl} next"
-
         # Menus
         "$mod, space, exec, ${wofi}"
 
@@ -80,16 +71,35 @@ in
         "$mod, 9, workspace, 9"
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
 
+        # Workspaces - Special
+        "$mod, Delete, togglespecialworkspace, scratchpad"
+
         # Zoom
         "$mod, z, exec, hyprctl keyword cursor:zoom_factor 3.0"
         "$mod SHIFT, z, exec, hyprctl keyword cursor:zoom_factor 1.0"
       ];
+
+      # Bindings - Repeat
       binde = [
         # Audio
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
+
+      # Bindings - Lock Bypass
+      bindl = [
+        # Media
+        ", XF86AudioPlay, exec, ${playerctl} play-pause"
+        ", XF86AudioPrev, exec, ${playerctl} previous"
+        ", XF86AudioNext, exec, ${playerctl} next"
+
+        # Brightness
+        ", XF86MonBrightnessUp, exec, ${brightnessctl} set 5%+"
+        ", XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-"
+      ];
+
+      # Bindings - Mouse
       bindm = [ "$mod, mouse:272, movewindow" ];
 
       # Settings
@@ -125,18 +135,10 @@ in
         initial_workspace_tracking = 2;
       };
 
-      # Breaks waybar for some reason
-      # workspace = [
-      #   "1, defaultName:"
-      #   "2, defaultName:"
-      #   "3, defaultName:"
-      #   "4, defaultName:"
-      #   "5, defaultName:"
-      #   "6, defaultName:"
-      #   "7, defaultName:"
-      #   "8, defaultName:"
-      #   "9, defaultName:"
-      # ];
+      workspace = [
+        # Toggle terminal
+        "special:scratchpad, on-created-empty:${kitty} --class toggleterm"
+      ];
 
       xwayland = {
         force_zero_scaling = true;
@@ -145,7 +147,14 @@ in
       # Windows
       windowrulev2 = [
         "noborder, fullscreen:1"
+
+        # Pulsemixer
         "float, class:(pulsemixer)"
+        "size 60% 60%, class:(pulsemixer)"
+
+        # Toggle terminal
+        "float, class:(toggleterm)"
+        "size 80% 80%, class:(toggleterm)"
       ];
     };
 
