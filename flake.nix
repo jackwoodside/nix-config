@@ -49,7 +49,10 @@
                 (
                   { lib, ... }:
                   {
-                    options.colorScheme.hashedColors = with lib; mkOption { type = types.attrsOf types.str; };
+                    options.colorScheme = {
+                      hashedColors = with lib; mkOption { type = types.attrsOf types.str; };
+                      hyprColors = with lib; mkOption { type = types.attrsOf types.str; };
+                    };
                   }
                 )
                 { _module.args.colorSchemes = nix-colors.colorSchemes; }
