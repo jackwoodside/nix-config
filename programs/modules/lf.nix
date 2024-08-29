@@ -22,7 +22,7 @@ in
       icons = true;
       incsearch = true;
       relativenumber = true;
-      scrolloff = true;
+      scrolloff = 2;
     };
   };
 }

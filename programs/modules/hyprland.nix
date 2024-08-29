@@ -7,6 +7,8 @@
 
 let
   colours = config.colorScheme.hyprColors;
+
+  brightnessctl = "${lib.getExe pkgs.brightnessctl}";
   kitty = "${lib.getExe pkgs.kitty}";
   playerctl = "${lib.getExe pkgs.playerctl}";
   wofi = "${lib.getExe pkgs.wofi}";
@@ -22,6 +24,10 @@ in
       "$mod" = "SUPER";
       bind = [
         "$mod, Return, exec, ${kitty}"
+
+        # Brightness
+        ", XF86MonBrightnessUp, exec, ${brightnessctl} set 5%+"
+        ", XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-"
 
         # Media
         ", XF86AudioPlay, exec, ${playerctl} play-pause"
