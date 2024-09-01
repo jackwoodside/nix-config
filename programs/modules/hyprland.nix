@@ -80,16 +80,14 @@ in
       ];
 
       # Bindings - Repeat
-      binde = [
-        # Audio
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ];
+      binde = [ ];
 
       # Bindings - Lock Bypass
       bindl = [
         # Media
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioPlay, exec, ${playerctl} play-pause"
         ", XF86AudioPrev, exec, ${playerctl} previous"
         ", XF86AudioNext, exec, ${playerctl} next"
