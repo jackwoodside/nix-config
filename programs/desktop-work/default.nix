@@ -7,5 +7,8 @@
     ./waybar.nix
   ];
 
-  home.packages = with pkgs; [ julia ];
+  home.packages = with pkgs; [
+    jabref
+    julia
+  ];
 }

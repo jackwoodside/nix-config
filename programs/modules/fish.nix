@@ -1,15 +1,16 @@
 { lib, pkgs, ... }:
 
+let
+  bat = "${lib.getExe pkgs.bat}";
+  eza = "${lib.getExe pkgs.eza}";
+  fd = "${lib.getExe pkgs.fd}";
+  helix = "${lib.getExe pkgs.helix}";
+  ripgrep = "${lib.getExe pkgs.ripgrep}";
+  starship = "${lib.getExe pkgs.starship}";
+in
 {
   programs.fish =
-    let
-      bat = "${lib.getExe pkgs.bat}";
-      eza = "${lib.getExe pkgs.eza}";
-      fd = "${lib.getExe pkgs.fd}";
-      helix = "${lib.getExe pkgs.helix}";
-      ripgrep = "${lib.getExe pkgs.ripgrep}";
-      starship = "${lib.getExe pkgs.starship}";
-    in
+
     {
       enable = true;
       interactiveShellInit = ''

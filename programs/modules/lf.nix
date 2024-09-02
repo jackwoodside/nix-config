@@ -1,16 +1,28 @@
 { lib, pkgs, ... }:
 
+let
+  pistol = "${lib.getExe pkgs.pistol}";
+in
 {
   programs.lf = {
     enable = true;
+
+    keybindings = {
+      p = "paste; clear";
+    };
+
     previewer.source = pkgs.writeShellScript "previewer.sh" ''
       #!/bin/sh
-      case "$1" in
-        *.pdf) ${pkgs.poppler_utils}/bin/pdftotext "$1" -;;
-        *.tar*) tar tf "$1";;
-        *.zip) ${lib.getExe pkgs.unzip} -l "$1";;
-        *) ${lib.getExe pkgs.bat} "$1";;
-      esac
+      ${pistol} "$1"
     '';
+
+    settings = {
+      dircounts = true;
+      drawbox = true;
+      icons = true;
+      incsearch = true;
+      relativenumber = true;
+      scrolloff = 2;
+    };
   };
 }

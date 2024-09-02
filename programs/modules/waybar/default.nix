@@ -65,6 +65,7 @@
         };
 
         "hyprland/submap" = {
+          format = "󰙖";
           tooltip = false;
         };
 

@@ -5,7 +5,7 @@
     enable = true;
 
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = "catppuccin-mocha-lavender-compact+default";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "compact";
@@ -14,7 +14,7 @@
     };
 
     iconTheme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = "catppuccin-mocha-lavender-compact+default";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "compact";
