@@ -44,6 +44,7 @@
           "$mod SHIFT, down, movewindow, d"
 
           "$mod, x, movecurrentworkspacetomonitor, +1"
+          "$mod SHIFT, x, swapactiveworkspaces, current +1"
 
           "$mod SHIFT, space, togglefloating"
 
