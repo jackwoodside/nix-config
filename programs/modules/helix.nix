@@ -38,6 +38,9 @@
 
     languages = {
       language-server = {
+        openscad-lsp = {
+          command = "${lib.getExe pkgs.openscad-lsp}";
+        };
         typescript-language-server = {
           command = "${lib.getExe pkgs.nodePackages.typescript-language-server}";
         };
