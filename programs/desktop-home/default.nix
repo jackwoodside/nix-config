@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    jellyfin-media-player
     spotify
     steam
   ];
