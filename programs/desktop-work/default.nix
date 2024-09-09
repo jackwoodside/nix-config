@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     jabref
     julia
+    prusa-slicer
     openscad
   ];
 }
