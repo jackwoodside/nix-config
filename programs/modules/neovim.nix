@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
@@ -23,11 +23,12 @@
     gcc
     gnumake
     neovim-remote
+    unzip
   ];
   xdg.configFile."nvim".source = builtins.fetchGit {
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "2db4d79c66df264c88c7a0b2e57667ad31c269b8";
+    rev = "036219c069d8e212c9c5779b2b64623d9aa1c821";
   };
 }
