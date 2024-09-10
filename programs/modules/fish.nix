@@ -5,6 +5,7 @@ let
   eza = "${lib.getExe pkgs.eza}";
   fd = "${lib.getExe pkgs.fd}";
   helix = "${lib.getExe pkgs.helix}";
+  neovim = "${lib.getExe pkgs.neovim}";
   ripgrep = "${lib.getExe pkgs.ripgrep}";
   starship = "${lib.getExe pkgs.starship}";
 in
@@ -34,6 +35,7 @@ in
         ls3 = "${eza} --icons -T -L=3";
         ls4 = "${eza} --icons -T -L=4";
         ls5 = "${eza} --icons -T -L=5";
+        vim = "${neovim}";
       };
     };
 }

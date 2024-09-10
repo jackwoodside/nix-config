@@ -24,6 +24,7 @@
     ./modules/kitty.nix
     ./modules/lf.nix
     ./modules/mpv.nix
+    ./modules/neovim.nix
     ./modules/networkmanager-dmenu.nix
     ./modules/nix-index.nix
     ./modules/sioyek.nix
