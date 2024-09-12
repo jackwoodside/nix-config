@@ -13,7 +13,7 @@
       shellcheck
       shfmt
       stylua
-      sumneko-lua-language-server
+      lua-language-server
       texlab
     ];
   };
@@ -29,6 +29,6 @@
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "cefee11499e8fc82b1c28f9c33867d4263d9c1cf";
+    rev = "64133a025880e545e85f633d42dd68b5b3d4d2de";
   };
 }
