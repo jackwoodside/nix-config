@@ -21,15 +21,6 @@
   # Packages
   environment.systemPackages = with pkgs; [ globalprotect-openconnect ];
 
-  # Printing
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      gutenprint
-      gutenprintBin
-    ];
-  };
-
   # Users
   home-manager.users.jack = import ../../programs/laptop;
 }
