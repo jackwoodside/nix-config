@@ -12,5 +12,6 @@
     julia
     prusa-slicer
     openscad
+    remmina
   ];
 }
