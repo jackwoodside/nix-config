@@ -13,7 +13,6 @@
     neovim-remote
 
     clang-tools
-    latexindent
     ltex-ls
     lua-language-server
     nil
