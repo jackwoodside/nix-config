@@ -57,5 +57,6 @@
 
     bitwarden-cli # TODO
     firefox # TODO
+    texlive.combined.scheme-full
   ];
 }
