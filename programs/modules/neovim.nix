@@ -13,19 +13,20 @@
     neovim-remote
 
     clang-tools
+    latexindent
     ltex-ls
+    lua-language-server
     nil
     nixfmt-rfc-style
     shellcheck
     shfmt
     stylua
-    lua-language-server
     texlab
   ];
   xdg.configFile."nvim".source = builtins.fetchGit {
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "e13b7d02d1d3675fc4b565754d52d4cebdbc9c6b";
+    rev = "45e0bc1037b3a54bb8a0c35a109e224e7d8cec9e";
   };
 }
