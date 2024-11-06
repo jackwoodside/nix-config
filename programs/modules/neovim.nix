@@ -12,11 +12,13 @@
     gnumake
     neovim-remote
 
+    black
     clang-tools
     ltex-ls
     lua-language-server
     nil
     nixfmt-rfc-style
+    pyright
     shellcheck
     shfmt
     stylua
@@ -26,6 +28,6 @@
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "45e0bc1037b3a54bb8a0c35a109e224e7d8cec9e";
+    rev = "39765e9a7c65e0dd6a36e10f9c3bfe99d78793b3";
   };
 }
