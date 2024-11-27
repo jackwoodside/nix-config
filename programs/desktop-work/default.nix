@@ -9,7 +9,8 @@
 
   home.packages = with pkgs; [
     jabref
-    julia
+    julia-bin
+    mathematica
     prusa-slicer
     openscad
     remmina

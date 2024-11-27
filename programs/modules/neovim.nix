@@ -24,10 +24,11 @@
     stylua
     texlab
   ];
+
   xdg.configFile."nvim".source = builtins.fetchGit {
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "39765e9a7c65e0dd6a36e10f9c3bfe99d78793b3";
+    rev = "db627a54ef0b1a0e65d2f8a9a08f3b5cf2741c28";
   };
 }
