@@ -25,10 +25,10 @@
     texlab
   ];
 
-  xdg.configFile."nvim".source = builtins.fetchGit {
-    url = "https://github.com/jackwoodside/nvim-config.git";
-    shallow = true;
-    ref = "main";
-    rev = "db627a54ef0b1a0e65d2f8a9a08f3b5cf2741c28";
-  };
+  # xdg.configFile."nvim".source = builtins.fetchGit {
+  #   url = "https://github.com/jackwoodside/nvim-config.git";
+  #   shallow = true;
+  #   ref = "main";
+  #   rev = "6673257a5818b42b56590880e3a75d70030af855";
+  # };
 }
