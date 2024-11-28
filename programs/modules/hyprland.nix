@@ -120,7 +120,7 @@ in
         blur = {
           enabled = false;
         };
-        drop_shadow = false;
+        # shadow.enable = false;
       };
 
       # layout
