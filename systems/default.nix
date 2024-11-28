@@ -45,7 +45,7 @@
   # Graphics
   hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   };
   services.greetd = {
