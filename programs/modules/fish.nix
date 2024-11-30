@@ -21,7 +21,7 @@ in
         set -U fish_greeting
         set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
         set -gx LESSHISTFILE -
-        set -gx EDITOR ${helix}
+        set -gx EDITOR ${neovim}
         set -gx PATH $PATH:/home/jack/.local/bin
       '';
       # set -gx MANPAGER 'nvim +Man!'
