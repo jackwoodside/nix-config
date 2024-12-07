@@ -11,6 +11,7 @@
   # Imports
   imports = [
     ./modules/bat.nix
+    ./modules/direnv.nix
     ./modules/dunst.nix
     ./modules/fish.nix
     ./modules/fzf.nix
