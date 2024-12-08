@@ -14,6 +14,5 @@
     prusa-slicer
     openscad
     remmina
-    teams
   ];
 }
