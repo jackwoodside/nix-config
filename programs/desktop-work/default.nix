@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     jabref
-    julia-bin
+    julia_110-bin
     # mathematica
     prusa-slicer
     openscad

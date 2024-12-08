@@ -12,6 +12,9 @@
     gnumake
     neovim-remote
 
+    fd
+    ripgrep
+
     black
     clang-tools
     ltex-ls
