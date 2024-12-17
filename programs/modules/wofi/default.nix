@@ -6,8 +6,8 @@
     settings = {
       columns = 2;
       hide_scroll = true;
-      insenitive = true;
-      matching = "fuzzy";
+      insensitive = true;
+      matching = "multi-contains";
       no_actions = true;
       prompt = "";
       show = "drun";
