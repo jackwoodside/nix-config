@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    calibre
     jellyfin-media-player
     spotify
     steam
