@@ -13,7 +13,7 @@
     ./modules/bat.nix
     ./modules/direnv.nix
     ./modules/dunst.nix
-    ./modules/eww.nix
+    ./modules/eww
     ./modules/fish.nix
     ./modules/fzf.nix
     ./modules/git.nix
