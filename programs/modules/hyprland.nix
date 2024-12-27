@@ -8,8 +8,11 @@
 let
   colours = config.colorScheme.hyprColors;
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
+  eww = "${lib.getExe pkgs.eww}";
   kitty = "${lib.getExe pkgs.kitty}";
+  lf = "${lib.getExe pkgs.lf}";
   playerctl = "${lib.getExe pkgs.playerctl}";
+  waybar = "${lib.getExe pkgs.waybar}";
   wofi = "${lib.getExe pkgs.wofi}";
 in
 {
@@ -17,7 +20,10 @@ in
     enable = true;
     settings = {
       # Autostart
-      exec-once = [ "waybar" ];
+      exec-once = [
+        "${eww} daemon"
+        "${waybar}"
+      ];
 
       # Bindings
       "$mod" = "SUPER";
@@ -25,7 +31,7 @@ in
         "$mod, Return, exec, ${kitty}"
 
         # File Browser
-        "$mod, w, exec, ${kitty} --class lf ${lib.getExe pkgs.lf}"
+        "$mod, w, exec, ${kitty} --class lf ${lf}"
 
         # Menus
         "$mod, space, exec, ${wofi}"
