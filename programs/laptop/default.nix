@@ -10,5 +10,8 @@
     ./waybar.nix
   ];
 
-  home.packages = with pkgs; [ jellyfin-media-player ];
+  home.packages = with pkgs; [
+    jellyfin-media-player
+    steam
+  ];
 }
