@@ -141,6 +141,10 @@ in
         disable_hyprland_logo = true;
       };
 
+      render = {
+        explicit_sync = 0;
+      };
+
       workspace = [
         # Toggle terminal
         "special:scratchpad, on-created-empty:${kitty} --class toggleterm"
