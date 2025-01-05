@@ -126,7 +126,9 @@ in
         blur = {
           enabled = false;
         };
-        # shadow.enable = false;
+        shadow = {
+          enabled = false;
+        };
       };
 
       # layout
