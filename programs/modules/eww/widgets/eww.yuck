@@ -1,1 +1,21 @@
-; Comment
+;;;; Widgets
+; Power Menu
+(defwidget powermenu []
+  (box :class "powermenu" :halign "center" :valign "center"
+   (button :class "powermenu_button" :onleftclick "poweroff" "󰐥" )
+   (button :class "powermenu_button" :onleftclick "reboot" "" )
+   (button :class "powermenu_button" :onleftclick "hyprlock" "" )
+))
+
+;;;; Windows
+; Power Menu
+(defwindow powermenu
+ :wm-ignore true
+ :monitor 0
+ :geometry (
+     geometry :width "60%"
+              :height "50%"
+              :anchor "center center"
+     )
+ (powermenu)
+)
