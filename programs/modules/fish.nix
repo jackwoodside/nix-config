@@ -20,8 +20,8 @@ in
       set -gx LESSHISTFILE -
       set -gx EDITOR ${neovim}
       set -gx PATH $PATH:/home/jack/.local/bin
+      set -gx MANPAGER '${neovim} +Man!'
     '';
-    # set -gx MANPAGER 'nvim +Man!'
     shellAliases = {
       c = "clear";
       cat = "${bat}";
