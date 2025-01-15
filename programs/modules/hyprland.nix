@@ -38,7 +38,7 @@ in
 
         # Menus
         "$mod, space, exec, ${wofi}"
-        ", Delete, exec ${grim} -g '$(${slurp})' - | ${wl-copy}"
+        ", Delete, exec, ${grim} -g \"$(${slurp})\" - | ${wl-copy}"
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
