@@ -59,6 +59,7 @@
 
     bitwarden-cli # TODO
     firefox # TODO
+    krita
     texlive.combined.scheme-full
   ];
 }

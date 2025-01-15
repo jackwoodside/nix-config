@@ -9,10 +9,13 @@ let
   colours = config.colorScheme.hyprColors;
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
   eww = "${lib.getExe pkgs.eww}";
+  grim = "${lib.getExe pkgs.grim}";
   kitty = "${lib.getExe pkgs.kitty}";
   lf = "${lib.getExe pkgs.lf}";
   playerctl = "${lib.getExe pkgs.playerctl}";
+  slurp = "${lib.getExe pkgs.slurp}";
   waybar = "${lib.getExe pkgs.waybar}";
+  wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
   wofi = "${lib.getExe pkgs.wofi}";
 in
 {
@@ -35,6 +38,7 @@ in
 
         # Menus
         "$mod, space, exec, ${wofi}"
+        ", Delete, exec ${grim} -g '$(${slurp})' - | ${wl-copy}"
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
