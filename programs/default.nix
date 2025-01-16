@@ -62,4 +62,18 @@
     krita
     texlive.combined.scheme-full
   ];
+
+  # Customised desktop entries
+  xdg.desktopEntries = {
+    # Jellyfin
+    "com.github.iwalton3.jellyfin-media-player" = {
+      name = "Jellyfin";
+      exec = "jellyfinmediaplayer --disable-gpu";
+    };
+    # Krita
+    "org.kde.krita" = {
+      name = "Krita";
+      exec = "krita --nosplash";
+    };
+  };
 }
