@@ -7,8 +7,11 @@
 
 let
   colours = config.colorScheme.hyprColors;
+
+  bc = "${lib.getExe pkgs.bc}";
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
   eww = "${lib.getExe pkgs.eww}";
+  grep = "${lib.getExe pkgs.ripgrep}";
   grim = "${lib.getExe pkgs.grim}";
   kitty = "${lib.getExe pkgs.kitty}";
   lf = "${lib.getExe pkgs.lf}";
@@ -17,6 +20,27 @@ let
   waybar = "${lib.getExe pkgs.waybar}";
   wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
   wofi = "${lib.getExe pkgs.wofi}";
+
+  resize-x = pkgs.writeShellScript "resize-x.sh" ''
+    X=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$2}")
+    Y=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$3}")
+
+    TEMP=$(printf "%.0f" $(echo "scale=6; $Y / 9" | ${bc}))
+    Y=$(printf "%.0f" $(echo "scale=6; 9*$TEMP" | ${bc}))
+    X=$(echo "16*$Y/9" | ${bc})
+
+    hyprctl dispatch resizeactive exact $X $Y
+  '';
+  resize-y = pkgs.writeShellScript "resize-y.sh" ''
+    X=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$2}")
+    Y=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$3}")
+
+    TEMP=$(printf "%.0f" $(echo "scale=6; $X / 16" | ${bc}))
+    X=$(printf "%.0f" $(echo "scale=6; 16*$TEMP" | ${bc}))
+    Y=$(echo "9*$X/16" | ${bc})
+
+    hyprctl dispatch resizeactive exact $X $Y
+  '';
 in
 {
   wayland.windowManager.hyprland = {
@@ -188,6 +212,9 @@ in
       binde=SHIFT,right,resizeactive,1 0
       binde=SHIFT,up,resizeactive,0 -1
       binde=SHIFT,down,resizeactive,0 1
+
+      bind=,h,exec,${resize-x}
+      bind=,v,exec,${resize-y}
 
       bind=,escape,submap,reset 
       bind=,Return,submap,reset 
