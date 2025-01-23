@@ -13,6 +13,7 @@ let
   eww = "${lib.getExe pkgs.eww}";
   grep = "${lib.getExe pkgs.ripgrep}";
   grim = "${lib.getExe pkgs.grim}";
+  jq = "${lib.getExe pkgs.jq}";
   kitty = "${lib.getExe pkgs.kitty}";
   lf = "${lib.getExe pkgs.lf}";
   playerctl = "${lib.getExe pkgs.playerctl}";
@@ -21,6 +22,21 @@ let
   wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
   wofi = "${lib.getExe pkgs.wofi}";
 
+  toggle = pkgs.writeShellScript "toggle.sh" ''
+    #!/usr/bin/env bash
+    # Check border size for toggle direction
+    BORDER=$(hyprctl -j getoption general:border_size | ${jq} ".int")
+    if [ $BORDER -eq 2 ]; then
+        hyprctl keyword general:border_size 0
+        hyprctl keyword general:gaps_in 0
+        hyprctl keyword general:gaps_out 0
+    else
+        hyprctl keyword general:border_size 2
+        hyprctl keyword general:gaps_in 5
+        hyprctl keyword general:gaps_out 10
+    fi
+    pkill -SIGUSR1 "waybar"
+  '';
   resize-x = pkgs.writeShellScript "resize-x.sh" ''
     X=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$2}")
     Y=$(hyprctl activewindow | ${grep} "size:" | tr "," " " | awk "{print \$3}")
@@ -67,6 +83,9 @@ in
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
+
+        # Toggle statusbar and gaps and borders
+        ", h, exec, ${toggle}"
 
         # Windows
         "$mod, left, movefocus, l"
@@ -145,6 +164,9 @@ in
         "col.inactive_border" = colours.base04;
         gaps_in = 5;
         gaps_out = 10;
+        snap = {
+          enabled = true;
+        };
       };
 
       cursor = {
