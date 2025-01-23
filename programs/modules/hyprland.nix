@@ -62,7 +62,7 @@ in
 
         # Menus
         "$mod, space, exec, ${wofi}"
-        ", Delete, exec, ${grim} -g \"$(${slurp})\" - | ${wl-copy}"
+        ", Home, exec, ${grim} -g \"$(${slurp} -d -c \"#00000000\")\" - | ${wl-copy}"
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
