@@ -62,7 +62,8 @@ in
 
         # Menus
         "$mod, space, exec, ${wofi}"
-        ", Home, exec, ${grim} -g \"$(${slurp} -d -c '#00000000' -f 'JetBrains Mono')\" - | ${wl-copy}"
+        # ", Home, exec, ${grim} -g \"$(${slurp} -d -c '#00000000' -f 'JetBrains Mono')\" - | ${wl-copy}"
+        ", Home, exec, ${grim} -g \"$(${slurp} -d)\" - | ${wl-copy}"
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
