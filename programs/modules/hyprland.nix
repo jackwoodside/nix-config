@@ -85,7 +85,7 @@ in
         "$mod, r, submap, Resize" # Submap defined at the end
 
         # Toggle statusbar and gaps and borders
-        ", h, exec, ${toggle}"
+        "$mod, t, exec, ${toggle}"
 
         # Windows
         "$mod, left, movefocus, l"
