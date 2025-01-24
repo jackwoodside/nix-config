@@ -15,6 +15,7 @@
     fd
     ripgrep
 
+    bash-language-server
     black
     clang-tools
     ltex-ls
