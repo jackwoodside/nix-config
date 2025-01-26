@@ -87,6 +87,7 @@
   users.mutableUsers = false;
   users.users.jack = {
     extraGroups = [
+      "dialout"
       "networkmanager"
       "video"
       "wheel"
