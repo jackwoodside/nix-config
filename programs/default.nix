@@ -63,6 +63,14 @@
     texlive.combined.scheme-full
   ];
 
+  # Mime applications
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "sioyek.desktop" ];
+    };
+  };
+
   # Customised desktop entries
   xdg.desktopEntries = {
     # Jellyfin
