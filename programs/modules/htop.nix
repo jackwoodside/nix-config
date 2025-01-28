@@ -22,7 +22,6 @@
       ];
       show_program_path = false;
       sort_key = "PERCENT_MEM";
-      tree_view = true;
     };
   };
 }
