@@ -192,6 +192,10 @@ in
         background_color = colours.base00;
         disable_autoreload = true;
         disable_hyprland_logo = true;
+
+        # Swallowing
+        enable_swallow = true;
+        swallow_regex = "kitty";
       };
 
       render = {
