@@ -194,8 +194,8 @@ in
         disable_hyprland_logo = true;
 
         # Swallowing
-        enable_swallow = true;
-        swallow_regex = "kitty";
+        # enable_swallow = true;
+        # swallow_regex = "kitty";
       };
 
       render = {
