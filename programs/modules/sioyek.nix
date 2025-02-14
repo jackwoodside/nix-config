@@ -26,6 +26,7 @@ in
       "should_launch_new_window" = "1";
       "should_use_multiple_monitors" = "0";
       "show_document_name_in_statusbar" = "1";
+      "status_bar_format" = "Page %{current_page} / %{num_pages}%{document_name}%{chapter_name}%{search_results}%{search_progress}";
       "synctex_highlight_color" = "0.0 0.0 0.0";
       "touchpad_sensitivity" = "0.4";
     };
