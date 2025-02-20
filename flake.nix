@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,9 +24,11 @@
   outputs =
     inputs@{
       nixpkgs,
+
       disko,
       home-manager,
       nix-colors,
+      nix-index-database,
       sops-nix,
       ...
     }:
@@ -34,6 +40,7 @@
 
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            nix-index-database.nixosModules.nix-index
             sops-nix.nixosModules.sops
 
             # For including self.images
