@@ -18,6 +18,7 @@
     bash-language-server
     black
     clang-tools
+    harper-ls
     ltex-ls
     lua-language-server
     nil
