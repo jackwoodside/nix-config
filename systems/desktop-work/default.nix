@@ -17,4 +17,8 @@
 
   # Users
   home-manager.users.jack = import ../../programs/desktop-work;
+  users.users.jack.extraGroups = [ "libvirtd" ];
+
+  # Virtualisation
+  virtualisation.libvirtd.enable = true;
 }

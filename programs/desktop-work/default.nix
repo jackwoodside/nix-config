@@ -14,5 +14,6 @@
     prusa-slicer
     openscad
     remmina
+    virt-manager
   ];
 }
