@@ -15,12 +15,12 @@ let
   grim = "${lib.getExe pkgs.grim}";
   jq = "${lib.getExe pkgs.jq}";
   kitty = "${lib.getExe pkgs.kitty}";
-  lf = "${lib.getExe pkgs.lf}";
   playerctl = "${lib.getExe pkgs.playerctl}";
   slurp = "${lib.getExe pkgs.slurp}";
   waybar = "${lib.getExe pkgs.waybar}";
   wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
   wofi = "${lib.getExe pkgs.wofi}";
+  yazi = "${lib.getExe pkgs.yazi}";
 
   toggle = pkgs.writeShellScript "toggle.sh" ''
     #!/usr/bin/env bash
@@ -74,7 +74,7 @@ in
         "$mod, Return, exec, ${kitty}"
 
         # File Browser
-        "$mod, w, exec, ${kitty} --class lf ${lf}"
+        "$mod, w, exec, ${kitty} --class yazi ${yazi}"
 
         # Menus
         "$mod, space, exec, ${wofi}"
