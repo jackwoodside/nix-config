@@ -35,7 +35,7 @@ in
 
         hovered = {
           fg = "#1e1e2e";
-          bg = "#b4befe";
+          bg = "#89b4fa";
         };
         preview_hovered = {
           fg = "#1e1e2e";
@@ -65,8 +65,8 @@ in
           bg = "#94e2d5";
         };
         marker_selected = {
-          fg = "#b4befe";
-          bg = "#b4befe";
+          fg = "#89b4fa";
+          bg = "#89b4fa";
         };
 
         tab_active = {
@@ -89,7 +89,7 @@ in
         };
         count_selected = {
           fg = "#1e1e2e";
-          bg = "#b4befe";
+          bg = "#89b4fa";
         };
 
         border_symbol = "│";
@@ -101,11 +101,11 @@ in
       mode = {
         normal_main = {
           fg = "#1e1e2e";
-          bg = "#b4befe";
+          bg = "#89b4fa";
           bold = true;
         };
         normal_alt = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
           bg = "#313244";
         };
 
@@ -166,7 +166,7 @@ in
 
       input = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         title = { };
         value = { };
@@ -177,7 +177,7 @@ in
 
       pick = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         active = {
           fg = "#f5c2e7";
@@ -187,10 +187,10 @@ in
 
       confirm = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         title = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         content = { };
         list = { };
@@ -202,13 +202,13 @@ in
 
       cmp = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
       };
 
       tasks = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         title = { };
         hovered = {
@@ -302,20 +302,20 @@ in
           }
           {
             name = "*/";
-            fg = "#b4befe";
+            fg = "#89b4fa";
           }
         ];
       };
 
       spot = {
         border = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         title = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
         };
         tbl_cell = {
-          fg = "#b4befe";
+          fg = "#89b4fa";
           reversed = true;
         };
         tbl_col = {
