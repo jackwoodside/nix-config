@@ -33,6 +33,7 @@
     ./modules/udiskie.nix
     ./modules/waybar
     ./modules/wofi
+    ./modules/yazi.nix
   ];
 
   # Colorscheme
