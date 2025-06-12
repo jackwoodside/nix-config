@@ -1,7 +1,6 @@
 { lib, pkgs, ... }:
 
 let
-  bat = "${lib.getExe pkgs.bat}";
   eza = "${lib.getExe pkgs.eza}";
   fd = "${lib.getExe pkgs.fd}";
   neovim = "${lib.getExe pkgs.neovim}";
@@ -24,7 +23,6 @@ in
     '';
     shellAliases = {
       c = "clear";
-      cat = "${bat}";
       find = "${fd}";
       grep = "${ripgrep}";
       ls = "${eza} --icons -T -L=1";
