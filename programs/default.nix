@@ -55,7 +55,7 @@
   # Misc. programs
   home.packages = with pkgs; [
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
 
     bitwarden-cli # TODO
     firefox # TODO
