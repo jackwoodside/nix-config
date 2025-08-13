@@ -12,7 +12,7 @@ in
     enable = true;
 
     settings = {
-      manager = {
+      mgr = {
         sort_dir_first = true;
       };
       preview = {
@@ -21,11 +21,11 @@ in
       };
     };
 
-    plugins = {
-      full-border = "${plugins}/full-border.yazi";
-    };
+    # plugins = {
+    #   full-border = "${plugins}/full-border.yazi";
+    # };
 
-    initLua = ''require("full-border"):setup()'';
+    # initLua = ''require("full-border"):setup()'';
 
     theme = {
       manager = {
