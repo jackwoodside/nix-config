@@ -61,6 +61,7 @@
     firefox # TODO
     krita
     obsidian
+    sxiv
     texlive.combined.scheme-full
   ];
 
