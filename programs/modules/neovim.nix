@@ -27,6 +27,7 @@
     shellcheck
     shfmt
     stylua
+    tectonic
     texlab
   ];
 
