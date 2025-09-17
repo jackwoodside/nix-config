@@ -69,15 +69,6 @@
   services.udisks2.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  # Printing
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      gutenprint
-      gutenprintBin
-    ];
-  };
-
   # Timezone
   time.timeZone = "Australia/Sydney";
 
