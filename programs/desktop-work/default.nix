@@ -8,9 +8,9 @@
   ];
 
   home.packages = with pkgs; [
+    inkscape
     jabref
     julia_110-bin
-    # mathematica
     prusa-slicer
     openscad
     remmina
