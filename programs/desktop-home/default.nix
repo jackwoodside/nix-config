@@ -15,5 +15,6 @@
     prusa-slicer
     spotify
     steam
+    zathura
   ];
 }

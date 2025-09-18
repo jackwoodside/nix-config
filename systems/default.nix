@@ -90,6 +90,7 @@
     extraGroups = [
       "dialout"
       "networkmanager"
+      "plugdev"
       "video"
       "wheel"
     ];
