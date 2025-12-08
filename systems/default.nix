@@ -50,7 +50,7 @@
   };
   services.greetd = {
     enable = true;
-    settings.default_session.command = "${lib.getExe pkgs.greetd.tuigreet} --cmd Hyprland";
+    settings.default_session.command = "${lib.getExe pkgs.tuigreet} --cmd Hyprland";
   };
 
   # Networking
