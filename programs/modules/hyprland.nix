@@ -190,6 +190,11 @@ in
         smart_resizing = false;
       };
 
+      ecosystem = {
+        no_donation_nag = true;
+        no_update_news = true;
+      };
+
       misc = {
         background_color = colours.base00;
         disable_autoreload = true;
@@ -198,10 +203,6 @@ in
         # Swallowing
         # enable_swallow = true;
         # swallow_regex = "kitty";
-      };
-
-      render = {
-        explicit_sync = 0;
       };
 
       workspace = [
