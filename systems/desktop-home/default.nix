@@ -13,6 +13,9 @@
   # Networking
   networking.hostName = "europa";
 
+  # Radio
+  hardware.rtl-sdr.enable = true;
+
   # Users
   home-manager.users.jack = import ../../programs/desktop-home;
 }
