@@ -58,7 +58,11 @@
   services.tailscale.enable = true;
 
   # Packages
-  environment.pathsToLink = [ "/share/fish" ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/fish"
+    "/share/xdg-desktop-portal"
+  ];
   programs = {
     dconf.enable = true; # For GTK themes
     fish.enable = true;
