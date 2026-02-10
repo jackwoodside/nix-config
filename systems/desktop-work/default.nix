@@ -14,6 +14,9 @@
     enable = true;
     settings.X11Forwarding = true;
   };
+  programs.ssh = {
+    extraConfig = "WarnWeakCrypto no";
+  };
 
   # Users
   home-manager.users.jack = import ../../programs/desktop-work;
