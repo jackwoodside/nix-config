@@ -222,6 +222,9 @@ in
         "float, class:(pulsemixer)"
         "size 60% 60%, class:(pulsemixer)"
 
+        # Steam (didn't used to need this?)
+        "tile, class:(steam)"
+
         # Toggle terminal
         "float, class:(toggleterm)"
         "size 80% 80%, class:(toggleterm)"
