@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    # jellyfin-media-player
+    makemkv
     obs-studio
     prusa-slicer
     spotify
