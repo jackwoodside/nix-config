@@ -6,6 +6,9 @@
     ./hardware-configuration.nix
   ];
 
+  # DVD drive
+  boot.kernelModules = [ "sg" ];
+
   # Graphics
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
