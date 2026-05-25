@@ -84,6 +84,7 @@
   users.users.jack = {
     extraGroups = [
       "dialout"
+      "libvirtd"
       "networkmanager"
       "plugdev"
       "video"
@@ -99,4 +100,7 @@
     useUserPackages = true;
     users.jack = import ../programs;
   };
+
+  # Virtualisation
+  virtualisation.libvirtd.enable = true;
 }

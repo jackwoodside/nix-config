@@ -15,6 +15,5 @@
     openscad
     remmina
     teams-for-linux
-    virt-manager
   ];
 }

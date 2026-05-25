@@ -63,6 +63,7 @@
     obsidian
     sxiv
     texlive.combined.scheme-full
+    virt-manager
   ];
 
   # Mime applications
