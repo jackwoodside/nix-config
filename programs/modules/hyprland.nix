@@ -215,19 +215,19 @@ in
       };
 
       # Windows
-      windowrulev2 = [
-        "noborder, fullscreen:1"
+      windowrule = [
+        "noborder, match:fullscreen true"
 
         # Pulsemixer
-        "float, class:(pulsemixer)"
-        "size 60% 60%, class:(pulsemixer)"
+        "float, match:class (pulsemixer)"
+        "size 60% 60%, match:class (pulsemixer)"
 
         # Steam (didn't used to need this?)
-        "tile, class:(steam)"
+        "tile, match:class (steam)"
 
         # Toggle terminal
-        "float, class:(toggleterm)"
-        "size 80% 80%, class:(toggleterm)"
+        "float, match:class (toggleterm)"
+        "size 80% 80%, match:class (toggleterm)"
       ];
     };
 
