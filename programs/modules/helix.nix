@@ -50,7 +50,7 @@
           name = "nix";
           auto-format = true;
           formatter = {
-            command = "${lib.getExe pkgs.nixfmt-rfc-style}";
+            command = "${lib.getExe pkgs.nixfmt}";
           };
         }
       ];
