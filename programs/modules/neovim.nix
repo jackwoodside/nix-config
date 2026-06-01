@@ -14,6 +14,7 @@
 
     fd
     ripgrep
+    tree-sitter
 
     bash-language-server
     black
@@ -35,6 +36,6 @@
     url = "https://github.com/jackwoodside/nvim-config.git";
     shallow = true;
     ref = "main";
-    rev = "bb59f59f5469095a00acc9e8bf5e1e243ce13924";
+    rev = "f90af9cee6507a4e50ee9f08474d7f920c90bdda";
   };
 }
