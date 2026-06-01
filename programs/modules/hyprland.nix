@@ -10,7 +10,6 @@ let
 
   bc = "${lib.getExe pkgs.bc}";
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
-  eww = "${lib.getExe pkgs.eww}";
   grep = "${lib.getExe pkgs.ripgrep}";
   grim = "${lib.getExe pkgs.grim}";
   jq = "${lib.getExe pkgs.jq}";
@@ -61,10 +60,10 @@ in
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     settings = {
       # Autostart
       exec-once = [
-        "${eww} daemon"
         "${waybar}"
       ];
 
@@ -198,6 +197,7 @@ in
       misc = {
         background_color = colours.base00;
         disable_autoreload = true;
+        disable_splash_rendering = true;
         disable_hyprland_logo = true;
 
         # Swallowing
@@ -216,17 +216,17 @@ in
 
       # Windows
       windowrule = [
-        "noborder, match:fullscreen true"
+        "border_size 0, match:fullscreen true"
 
         # Pulsemixer
-        "float, match:class (pulsemixer)"
+        "float on, match:class (pulsemixer)"
         "size 60% 60%, match:class (pulsemixer)"
 
         # Steam (didn't used to need this?)
-        "tile, match:class (steam)"
+        "tile on, match:class (steam)"
 
         # Toggle terminal
-        "float, match:class (toggleterm)"
+        "float on, match:class (toggleterm)"
         "size 80% 80%, match:class (toggleterm)"
       ];
     };
