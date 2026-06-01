@@ -294,16 +294,6 @@ in
             mime = "application/{pdf,doc,rtf}";
             fg = "#a6e3a1";
           }
-
-          # Fallback
-          {
-            name = "*";
-            fg = "#cdd6f4";
-          }
-          {
-            name = "*/";
-            fg = "#89b4fa";
-          }
         ];
       };
 
