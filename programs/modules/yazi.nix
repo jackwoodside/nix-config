@@ -77,7 +77,6 @@ in
           fg = "#cdd6f4";
           bg = "#45475a";
         };
-        tab_width = 1;
 
         count_copied = {
           fg = "#1e1e2e";
