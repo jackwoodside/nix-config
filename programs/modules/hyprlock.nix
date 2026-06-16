@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, ... }:
 
 let
   colours = config.colorScheme.hyprColors;
@@ -20,21 +20,11 @@ in
         }
       ];
 
-      image = [
-        {
-          path = "${inputs.self}/images/lock.png";
-          size = 500;
-          border_color = colours.base05;
-          border_size = 3;
-          position = "0, 0";
-        }
-      ];
-
       input-field = [
         {
           size = "200, 50";
           outline_thickness = 3;
-          position = "0, -350";
+          position = "0, 0";
 
           font_color = colours.base05;
           inner_color = colours.base00;
