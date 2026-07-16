@@ -21,7 +21,7 @@ let
   wofi = "${lib.getExe pkgs.wofi}";
   yazi = "${lib.getExe pkgs.yazi}";
 
-  toggle = pkgs.writeShellScript "toggle.sh" ''
+  toggle_spacing = pkgs.writeShellScript "toggle_spacing.sh" ''
     #!/usr/bin/env bash
     # Check border size for toggle direction
     BORDER=$(hyprctl -j getoption general:border_size | ${jq} ".int")
@@ -84,7 +84,7 @@ in
         "$mod, r, submap, Resize" # Submap defined at the end
 
         # Toggle statusbar and gaps and borders
-        "$mod, t, exec, ${toggle}"
+        "$mod, t, exec, ${toggle_spacing}"
 
         # Windows
         "$mod, left, movefocus, l"
@@ -139,7 +139,7 @@ in
       binde = [ ];
 
       # Bindings - Lock Bypass
-      bindl = [
+      bindel = [
         # Media
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
