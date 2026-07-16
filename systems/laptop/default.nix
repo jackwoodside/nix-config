@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -15,10 +15,6 @@
 
   # Networking
   networking.hostName = "callisto";
-  services.globalprotect.enable = true;
-
-  # Packages
-  environment.systemPackages = with pkgs; [ globalprotect-openconnect ];
 
   # Users
   home-manager.users.jack = import ../../programs/laptop;
