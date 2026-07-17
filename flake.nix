@@ -6,6 +6,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    globalprotect-openconnect.url = "github:yuezk/GlobalProtect-openconnect";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
       nixpkgs,
 
       disko,
+      globalprotect-openconnect,
       home-manager,
       nix-colors,
       nix-index-database,
@@ -91,7 +93,15 @@
           # Laptop
           laptop = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = modules ++ [ ./systems/laptop ];
+            modules =
+              modules
+              ++ [ ./systems/laptop ]
+              ++ [
+                {
+                  services.ayatana-indicators.enable = true;
+                  environment.systemPackages = [ globalprotect-openconnect.packages."x86_64-linux".default ];
+                }
+              ];
           };
         };
     };
