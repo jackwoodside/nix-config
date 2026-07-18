@@ -11,7 +11,7 @@
   ];
 
   home.packages = with pkgs; [
-    jellyfin-media-player
+    jellyfin-desktop
     remmina
     steam
   ];
