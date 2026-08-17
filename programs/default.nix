@@ -14,6 +14,7 @@
     ./modules/direnv.nix
     ./modules/dunst.nix
     ./modules/fish.nix
+    ./modules/flameshot.nix
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/gtk.nix

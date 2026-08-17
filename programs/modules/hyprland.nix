@@ -10,6 +10,7 @@ let
 
   bc = "${lib.getExe pkgs.bc}";
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
+  flameshot = "${lib.getExe pkgs.flameshot}";
   grep = "${lib.getExe pkgs.ripgrep}";
   grim = "${lib.getExe pkgs.grim}";
   jq = "${lib.getExe pkgs.jq}";
@@ -77,8 +78,8 @@ in
 
         # Menus
         "$mod, space, exec, ${wofi}"
-        # ", Home, exec, ${grim} -g \"$(${slurp} -d -c '#00000000' -f 'JetBrains Mono')\" - | ${wl-copy}"
-        ", Home, exec, ${grim} -g \"$(${slurp} -d)\" - | ${wl-copy}"
+        #", Home, exec, ${grim} -g \"$(${slurp} -d)\" - | ${wl-copy}"
+        ", Home, exec, ${flameshot} gui"
 
         # Resizing
         "$mod, r, submap, Resize" # Submap defined at the end
