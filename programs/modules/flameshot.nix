@@ -4,9 +4,11 @@
   services.flameshot = {
     enable = true;
     settings = {
-      disabledTrayIcon = true;
-      showHelp = false;
-      showStartupLaunchMessage = false;
+      General = {
+        disabledTrayIcon = true;
+        showHelp = false;
+        showStartupLaunchMessage = false;
+      };
     };
   };
 }
