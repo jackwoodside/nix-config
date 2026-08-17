@@ -58,7 +58,7 @@
 
     bitwarden-cli # TODO
     firefox # TODO
-    krita
+    gimp
     obsidian
     sxiv
     texlive.combined.scheme-full
@@ -79,11 +79,6 @@
     "com.github.iwalton3.jellyfin-media-player" = {
       name = "Jellyfin";
       exec = "jellyfinmediaplayer --disable-gpu";
-    };
-    # Krita
-    "org.kde.krita" = {
-      name = "Krita";
-      exec = "krita --nosplash";
     };
   };
 }
