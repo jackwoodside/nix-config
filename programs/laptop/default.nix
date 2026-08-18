@@ -6,7 +6,7 @@
     ../modules/discord.nix
 
     ./hypridle.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./waybar.nix
   ];
 

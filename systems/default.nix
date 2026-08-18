@@ -103,4 +103,10 @@
 
   # Virtualisation
   virtualisation.libvirtd.enable = true;
+
+  # Window manager
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 }

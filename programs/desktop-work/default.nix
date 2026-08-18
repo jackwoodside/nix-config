@@ -3,7 +3,7 @@
 {
   # Imports
   imports = [
-    ./hyprland.nix
+    # ./hyprland.nix
     ./waybar.nix
   ];
 

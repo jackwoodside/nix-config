@@ -20,9 +20,9 @@
     ./modules/gtk.nix
     ./modules/helix.nix
     ./modules/htop.nix
-    ./modules/hypridle.nix
-    ./modules/hyprland.nix
-    ./modules/hyprlock.nix
+    # ./modules/hypridle.nix
+    ./modules/hyprland
+    # ./modules/hyprlock.nix
     ./modules/kitty.nix
     ./modules/mpv.nix
     ./modules/neovim.nix
