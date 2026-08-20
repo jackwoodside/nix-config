@@ -1,4 +1,5 @@
 require("config/autostart")
 require("config/bindings")
+require("config/monitors")
 require("config/settings")
 require("config/windows")
