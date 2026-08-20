@@ -1,5 +1,5 @@
 hl.window_rule({
-	name = "flameshot-multi-display-fix",
+	name = "flameshot-multi-display",
 	match = {
 		title = "flameshot",
 	},
@@ -10,7 +10,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "flameshot-pin-fix",
+	name = "flameshot-pin",
 	match = {
 		title = "flameshot-pin",
 	},
