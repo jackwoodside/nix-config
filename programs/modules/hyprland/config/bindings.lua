@@ -3,6 +3,7 @@ local mod = "SUPER + "
 local bind = hl.bind
 
 local config = hl.config
+local config_get = hl.get_config
 
 local exec = hl.dsp.exec_cmd
 
@@ -106,14 +107,15 @@ for i = 1, 9 do
 	bind(mod .. "SHIFT + " .. i, window.move({ workspace = i }))
 end
 
--- bind(mod .. "X", workspace.swap_monitors())
+bind(mod .. "X", workspace.swap_monitors({ monitor1 = "current", monitor2 = "+1" }))
+bind(mod .. "SHIFT + X", workspace.move({ monitor = "+1" }))
 
 -- Zoom
 local zoom_min = 1
 local zoom_max = 3
 local zoom_initial = 2
 local function zoom(offset)
-	local zoom_current = hl.get_config("cursor.zoom_factor")
+	local zoom_current = config_get("cursor.zoom_factor")
 	if offset ~= nil then -- offset given
 		zoom_current = zoom_current + offset
 	elseif zoom_current ~= zoom_min then -- zoom out
