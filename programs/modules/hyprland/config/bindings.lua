@@ -121,7 +121,13 @@ local function zoom(offset)
 	else -- zoom in
 		zoom_current = zoom_initial
 	end
+	zoom_current = math.max(zoom_min, math.min(zoom_max, zoom_current))
+	config({ cursor = { zoom_factor = zoom_current } })
 end
 bind(mod .. "Z", zoom)
-bind(mod .. "mouse_up", zoom(0.5))
-bind(mod .. "mouse_down", zoom(-0.5))
+bind(mod .. "mouse_up", function()
+	zoom(0.5)
+end)
+bind(mod .. "mouse_down", function()
+	zoom(-0.5)
+end)

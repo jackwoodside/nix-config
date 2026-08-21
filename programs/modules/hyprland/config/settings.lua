@@ -14,6 +14,7 @@ hl.config({
 
 	cursor = {
 		inactive_timeout = 3,
+		zoom_detached_camera = false,
 	},
 
 	decoration = {
