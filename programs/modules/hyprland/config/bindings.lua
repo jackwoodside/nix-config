@@ -111,7 +111,7 @@ end
 -- Zoom
 local zoom_min = 1
 local zoom_max = 3
-local zoom_initial = 1.5
+local zoom_initial = 2
 local function zoom(offset)
 	local zoom_current = hl.get_config("cursor.zoom_factor")
 	if offset ~= nil then -- offset given
@@ -125,9 +125,9 @@ local function zoom(offset)
 	config({ cursor = { zoom_factor = zoom_current } })
 end
 bind(mod .. "Z", zoom)
-bind(mod .. "mouse_up", function()
+bind(mod .. "KP_ADD", function()
 	zoom(0.5)
 end)
-bind(mod .. "mouse_down", function()
+bind(mod .. "KP_SUBTRACT", function()
 	zoom(-0.5)
 end)
