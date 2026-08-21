@@ -1,14 +1,18 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    brightnessctl
-    flameshot
-    playerctl
-    waybar
-    wofi
-    yazi
-  ];
+  home.packages =
+    with pkgs;
+    [
+      brightnessctl
+      playerctl
+      waybar
+      wofi
+      yazi
+    ]
+    ++ (with pkgs.unstable; [
+      flameshot
+    ]);
 
   # wayland.windowManager.hyprland = {
   #   enable = true;

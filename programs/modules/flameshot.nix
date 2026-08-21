@@ -1,11 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    grim
+  ];
+
   services.flameshot = {
     enable = true;
+    package = pkgs.unstable.flameshot;
     settings = {
       General = {
-        disabledGrimWarning = true;
         disabledTrayIcon = true;
         showAbortNotification = false;
         showDesktopNotification = false;
@@ -13,7 +17,6 @@
         showSidePanelButton = false;
         showStartupLaunchMessage = false;
         uiColor = "#cdd6f4";
-        useGrimAdapter = true;
       };
     };
   };
