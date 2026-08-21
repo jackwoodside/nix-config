@@ -108,6 +108,20 @@ end
 
 -- bind(mod .. "X", workspace.swap_monitors())
 
--- -- Zoom
--- bind(mod .. "Z", config({ cursor = { zoom_factor = 3 } }))
--- bind(mod .. "SHIFT + Z", config({ cursor = { zoom_factor = 1 } }))
+-- Zoom
+local zoom_min = 1
+local zoom_max = 3
+local zoom_initial = 1.5
+local function zoom(offset)
+	local zoom_current = hl.get_config("cursor.zoom_factor")
+	if offset ~= nil then -- offset given
+		zoom_current = zoom_current + offset
+	elseif zoom_current ~= zoom_min then -- zoom out
+		zoom_current = zoom_min
+	else -- zoom in
+		zoom_current = zoom_initial
+	end
+end
+bind(mod .. "Z", zoom)
+bind(mod .. "mouse_up", zoom(0.5))
+bind(mod .. "mouse_down", zoom(-0.5))
