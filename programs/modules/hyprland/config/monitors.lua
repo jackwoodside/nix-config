@@ -21,7 +21,7 @@ local monitor = hl.monitor
 monitor({
 	output = "HDMI-A-1",
 	mode = "1920x1080@60",
-	position = "0x300",
+	position = "0x360",
 	scale = 1,
 })
 monitor({

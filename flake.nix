@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     disko = {
       url = "github:nix-community/disko";
@@ -25,6 +26,7 @@
   outputs =
     inputs@{
       nixpkgs,
+      nixpkgs-unstable,
 
       disko,
       globalprotect-openconnect,
@@ -37,8 +39,13 @@
     {
       nixosConfigurations =
         let
-          modules = [
+          modules_base = [
             { nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; }
+            {
+              nixpkgs.overlays = [
+                (final: prev: { unstable = nixpkgs-unstable.legacyPackages.x86_64-linux; })
+              ];
+            }
 
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
@@ -81,20 +88,20 @@
           # Desktop (Home)
           desktop-home = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = modules ++ [ ./systems/desktop-home ];
+            modules = modules_base ++ [ ./systems/desktop-home ];
           };
 
           # Desktop (Work)
           desktop-work = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = modules ++ [ ./systems/desktop-work ];
+            modules = modules_base ++ [ ./systems/desktop-work ];
           };
 
           # Laptop
           laptop = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules =
-              modules
+              modules_base
               ++ [ ./systems/laptop ]
               ++ [
                 {
