@@ -1,4 +1,7 @@
-hl.window_rule({
+local rule = hl.window_rule
+
+-- Flameshot
+rule({
 	name = "flameshot-multi-display",
 	match = {
 		title = "flameshot",
@@ -8,12 +11,20 @@ hl.window_rule({
 	pin = true,
 	move = "0 0",
 })
-
-hl.window_rule({
+rule({
 	name = "flameshot-pin",
 	match = {
 		title = "flameshot-pin",
 	},
 	float = true,
 	pin = true,
+})
+
+-- Fullscreen borderless
+rule({
+	name = "fullscreen-borderless",
+	match = {
+		fullscreen = true,
+	},
+	border_color = "rgb(a6e3a1)",
 })
