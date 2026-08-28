@@ -1,12 +1,4 @@
-{ pkgs, ... }:
-let
-  plugins = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "plugins";
-    rev = "f1fb6cc1df9d829173b21dbc1e45ea6606a46f98";
-    hash = "sha256-OdRs3MLtP/HaPwlO4ygbmmCmLKPPi6TnfQD8umWY+Mw=";
-  };
-in
+{ ... }:
 {
   programs.yazi = {
     enable = true;
@@ -15,17 +7,19 @@ in
       mgr = {
         sort_dir_first = true;
       };
+      opener = {
+        open = [
+          {
+            run = "xdg-open %s1";
+            orphan = true;
+          }
+        ];
+      };
       preview = {
         max_width = 1000;
         max_height = 1000;
       };
     };
-
-    # plugins = {
-    #   full-border = "${plugins}/full-border.yazi";
-    # };
-
-    # initLua = ''require("full-border"):setup()'';
 
     theme = {
       manager = {
