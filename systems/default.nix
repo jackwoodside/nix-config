@@ -102,7 +102,10 @@
   };
 
   # Virtualisation
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
 
   # Window manager
   programs.hyprland = {
