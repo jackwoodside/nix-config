@@ -59,13 +59,13 @@ bind(mod .. "RETURN", exec(terminal))
 
 -- UI toggle
 bind(mod .. "T", function()
-	local border_size = hl.config.general.border_size
+	local border_size = config_get("general.border_size")
 	if border_size ~= 0 then
 		config({ general = { border_size = 0, gaps_in = 0, gaps_out = 0 } })
 	else
 		config({ general = { border_size = 2, gaps_in = 5, gaps_out = 10 } })
 	end
-	exec('pkill -SIGUSR1 "waybar"')
+	exec("pkill -SIGUSR1 'waybar'")
 end)
 
 -- Windows
